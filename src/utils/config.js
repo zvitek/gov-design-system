@@ -70,9 +70,9 @@ let config = {
     defaultImageRatio: null,
     defaultImageSrcsetFormatter: null,
     defaultBreadcrumbTag: 'a',
-    defaultBreadcrumbAlign: 'is-left',
-    defaultBreadcrumbSeparator: '',
-    defaultBreadcrumbSize: 'is-medium',
+    defaultBreadcrumbAlign: 'is-left', /* RMEOVE */
+    defaultBreadcrumbSeparator: '', /* RMEOVE */
+    defaultBreadcrumbSize: 'is-medium', /* RMEOVE */
     customIconPacks: null
 }
 

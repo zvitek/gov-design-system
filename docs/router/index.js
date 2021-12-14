@@ -31,6 +31,7 @@ const router = new Router({
             children: [
                 // Documentation
                 route('documentation', 'Documentation'),
+                route('documentation/breadcrumb', 'components/breadcrumb/Breadcrumb'),
                 route('documentation/button', 'components/button/Button'),
                 // Extensions
                 route('extensions', 'Extensions'),

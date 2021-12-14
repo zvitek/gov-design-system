@@ -1,17 +1,15 @@
-import { mount } from '@vue/test-utils'
-import BBreadcrumbItem from '@components/breadcrumb/BreadcrumbItem.vue'
+import { shallowMount } from '@vue/test-utils'
+import GovBreadcrumbItem from '@components/breadcrumb/BreadcrumbItem.vue'
 
-describe('BBreadcrumbItem', () => {
-    let wrapper
+let wrapper
+
+describe('GovBreadcrumbItem', () => {
     beforeEach(() => {
-        wrapper = mount(BBreadcrumbItem, {
-            propsData: {
-                tag: 'a'
-            }
-        })
+        wrapper = shallowMount(GovBreadcrumbItem)
     })
 
     it('is called', () => {
+        expect(wrapper.name()).toBe('GovBreadcrumbItem')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 
@@ -19,7 +17,12 @@ describe('BBreadcrumbItem', () => {
         expect(wrapper.html()).toMatchSnapshot()
     })
 
-    it('should have a li tag', () => {
-        expect(wrapper.contains('li')).toBeTruthy()
+    it('active item must be tag strong', () => {
+        wrapper.setProps({
+            tag: 'a',
+            active: true
+        })
+        expect(wrapper.vm.computedTag).toBe('strong')
+        expect(wrapper.find('strong').classes()).toContain('gov-title--delta')
     })
 })

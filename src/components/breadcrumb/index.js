@@ -15,6 +15,6 @@ use(Plugin)
 export default Plugin
 
 export {
-    Breadcrumb as BBreadcrumb,
-    BreadcrumbItem as BBreadcrumbItem
+    Breadcrumb as GovBreadcrumb,
+    BreadcrumbItem as GovBreadcrumbItem
 }

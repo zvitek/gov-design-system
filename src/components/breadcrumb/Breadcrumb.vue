@@ -1,43 +1,13 @@
 <template>
-    <nav :class="breadcrumbClasses">
-        <ul>
-            <slot />
-        </ul>
+    <nav class="gov-breadcrumbs">
+        <slot />
     </nav>
 </template>
 
 <script>
-import config from '../../utils/config'
-
 export default {
 
-    name: 'BBreadcrumb',
+    name: 'GovBreadcrumb'
 
-    props: {
-        align: {
-            type: String,
-            default: () => {
-                return config.defaultBreadcrumbAlign
-            }
-        },
-        separator: {
-            type: String,
-            default: () => {
-                return config.defaultBreadcrumbSeparator
-            }
-        },
-        size: {
-            type: String,
-            default: () => {
-                return config.defaultBreadcrumbSize
-            }
-        }
-    },
-
-    computed: {
-        breadcrumbClasses() {
-            return ['gov-breadcrumbs', this.align, this.separator, this.size]
-        }
-    }
 }
 </script>

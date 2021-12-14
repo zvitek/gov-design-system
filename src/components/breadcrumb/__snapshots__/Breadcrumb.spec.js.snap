@@ -1,7 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BBreadcrumb render correctly 1`] = `
-<nav class="breadcrumb is-left is-medium">
-    <ul></ul>
-</nav>
-`;
+exports[`GovBreadcrumb render correctly 1`] = `<nav class="gov-breadcrumbs"></nav>`;
