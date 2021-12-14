@@ -28,6 +28,34 @@ describe('GovButton', () => {
         expect(click).toHaveBeenCalledTimes(1)
     })
 
+    it('should not emit click if disabled', () => {
+        const click = jest.fn()
+        wrapper = shallowMount(GovButton, {
+            listeners: {
+                'click': click
+            },
+            attrs: {
+                'disabled': true
+            }
+        })
+        wrapper.find('.gov-button').trigger('click')
+        expect(click).toHaveBeenCalledTimes(0)
+    })
+
+    it('should set tag to "button" if disabled', () => {
+        wrapper.setProps({
+            tag: 'a'
+        })
+        expect(wrapper.vm.computedTag).toBe('a')
+
+        wrapper = shallowMount(GovButton, {
+            attrs: {
+                'disabled': true
+            }
+        })
+        expect(wrapper.vm.computedTag).toBe('button')
+    })
+
     it('should be primary outlined', () => {
         wrapper.setProps({
             primaryOutlined: true
@@ -54,33 +82,5 @@ describe('GovButton', () => {
             large: true
         })
         expect(wrapper.classes()).toContain('gov-button--large')
-    })
-
-    it('should set tag to "button" if disabled', () => {
-        wrapper.setProps({
-            tag: 'a'
-        })
-        expect(wrapper.vm.computedTag).toBe('a')
-
-        wrapper = shallowMount(GovButton, {
-            attrs: {
-                'disabled': true
-            }
-        })
-        expect(wrapper.vm.computedTag).toBe('button')
-    })
-
-    it('should not emit click if disabled', () => {
-        const click = jest.fn()
-        wrapper = shallowMount(GovButton, {
-            listeners: {
-                'click': click
-            },
-            attrs: {
-                'disabled': true
-            }
-        })
-        wrapper.find('.gov-button').trigger('click')
-        expect(click).toHaveBeenCalledTimes(0)
     })
 })

@@ -1,10 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BButton render correctly 1`] = `
-<button type="button" class="gov-button">
-    <!----></button>
-`;
-
 exports[`GovButton render correctly 1`] = `
 <button type="button" class="gov-button">
     <!----></button>
