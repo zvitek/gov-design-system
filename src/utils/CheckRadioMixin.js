@@ -5,6 +5,7 @@ export default {
         type: String,
         disabled: Boolean,
         required: Boolean,
+        error: Boolean,
         name: String,
         size: String
     },
@@ -22,6 +23,11 @@ export default {
                 this.newValue = value
                 this.$emit('input', value)
             }
+        },
+        wrapperClass() {
+            return {
+                'gov-form-control--error': this.error
+            }
         }
     },
     watch: {
@@ -34,8 +40,20 @@ export default {
     },
     methods: {
         focus() {
+            if (this.disabled) {
+                return
+            }
             // MacOS FireFox and Safari do not focus when clicked
             this.$refs.input.focus()
+            this.change()
+        },
+        change() {
+            if (this.$refs.input.checked) {
+                this.newValue = this.falseValue
+            } else {
+                this.newValue = this.trueValue
+            }
+            this.computedValue = this.newValue
         }
     }
 }

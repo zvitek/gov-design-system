@@ -1,15 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
-import BCheckbox from '@components/checkbox/Checkbox'
+import GovCheckbox from '@components/checkbox/Checkbox'
 
 let wrapper
 
-describe('BCheckbox', () => {
+describe('GovCheckbox', () => {
     beforeEach(() => {
-        wrapper = shallowMount(BCheckbox)
+        wrapper = shallowMount(GovCheckbox)
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('BCheckbox')
+        expect(wrapper.name()).toBe('GovCheckbox')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 

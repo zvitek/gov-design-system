@@ -1,18 +1,16 @@
 <template>
-    <label
-        class="b-checkbox checkbox"
-        :class="[size, { 'is-disabled': disabled }]"
-        ref="label"
-        :disabled="disabled"
-        @click="focus"
-        @keydown.prevent.enter="$refs.label.click()">
+    <div
+        class="gov-form-control gov-form-control--custom"
+        :class="wrapperClass">
         <input
+            class="gov-form-control__checkbox"
             v-model="computedValue"
             :indeterminate.prop="indeterminate"
             type="checkbox"
             ref="input"
             @click.stop
             :autocomplete="autocomplete"
+            :checked="computedValue === trueValue"
             :disabled="disabled"
             :required="required"
             :name="name"
@@ -20,16 +18,24 @@
             :true-value="trueValue"
             :false-value="falseValue"
             :aria-labelledby="ariaLabelledby">
-        <span class="check" :class="type" />
-        <span :id="ariaLabelledby" class="control-label"><slot/></span>
-    </label>
+        <label
+            class="gov-form-control__label"
+            ref="label"
+            :id="ariaLabelledby"
+            :disabled="disabled"
+            @click="focus"
+            @keydown.prevent.enter="$refs.label.click()">
+            <slot/>
+        </label>
+        <span class="gov-form-control__indicator"/>
+    </div>
 </template>
 
 <script>
 import CheckRadioMixin from '../../utils/CheckRadioMixin.js'
 
 export default {
-    name: 'BCheckbox',
+    name: 'GovCheckbox',
     mixins: [CheckRadioMixin],
     props: {
         indeterminate: Boolean,

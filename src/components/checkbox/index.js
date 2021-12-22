@@ -15,6 +15,6 @@ use(Plugin)
 export default Plugin
 
 export {
-    Checkbox as BCheckbox,
-    CheckboxButton as BCheckboxButton
+    Checkbox as GovCheckbox,
+    CheckboxButton as GovCheckboxButton
 }

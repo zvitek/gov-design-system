@@ -1,7 +1,7 @@
 <template>
     <div class="control" :class="{ 'is-expanded': expanded }">
         <label
-            class="b-checkbox checkbox button"
+            class="gov-checkbox checkbox button"
             ref="label"
             :class="[checked ? type : null, size, {
                 'is-disabled': disabled,
@@ -30,7 +30,7 @@
 import CheckRadioMixin from '../../utils/CheckRadioMixin.js'
 
 export default {
-    name: 'BCheckboxButton',
+    name: 'GovCheckboxButton',
     mixins: [CheckRadioMixin],
     props: {
         type: {

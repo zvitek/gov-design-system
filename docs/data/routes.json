@@ -293,7 +293,7 @@
     },
     "documentation/checkbox": {
         "title": "Checkbox",
-        "subtitle": "Select a single or grouped options",
+        "subtitle": "Select a single option",
         "path": "/documentation/checkbox",
         "githubPath": "pages/components/checkbox/Checkbox.vue",
         "menu": "documentation",
