@@ -1,5 +1,5 @@
 <template>
-    <div class="gov-tabs" :class="mainClasses">
+    <div class="gov-tabs">
         <nav
             class="gov-tabs__links-holder"
             role="tablist"
@@ -26,7 +26,7 @@
                 {{ childItem.label }}
             </button>
         </nav>
-        <div class="gov-tabs__content-holder" :class="{'is-transitioning': isTransitioning}">
+        <div class="gov-tabs__content-holder">
             <div class="gov-tabs__content is-active">
                 <slot/>
             </div>
@@ -35,46 +35,14 @@
 </template>
 
 <script>
-import config from '../../utils/config'
 import TabbedMixin from '../../utils/TabbedMixin.js'
 
 export default {
-    name: 'BTabs',
+    name: 'GovTabs',
     mixins: [TabbedMixin('tab')],
-    props: {
-        expanded: {
-            type: Boolean,
-            default: () => {
-                return config.defaultTabsExpanded
-            }
-        },
-        type: {
-            type: [String, Object],
-            default: () => {
-                return config.defaultTabsType
-            }
-        },
-        animated: {
-            type: Boolean,
-            default: () => {
-                return config.defaultTabsAnimated
-            }
-        },
-        multiline: Boolean
-    },
     data() {
         return {
             currentFocus: this.value
-        }
-    },
-    computed: {
-        mainClasses() {
-            return {
-                'is-fullwidth': this.expanded,
-                'is-vertical': this.vertical,
-                'is-multiline': this.multiline,
-                [this.position]: this.position && this.vertical
-            }
         }
     },
     methods: {
@@ -89,8 +57,8 @@ export default {
             // https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values#Navigation_keys
             const { key } = event
             switch (key) {
-                case this.vertical ? 'ArrowUp' : 'ArrowLeft':
-                case this.vertical ? 'Up' : 'Left': {
+                case 'ArrowLeft' :
+                case 'Left' : {
                     let prevIdx = this.getPrevItemIdx(this.currentFocus, true)
                     if (prevIdx === null) {
                         // We try to give focus back to the last visible element
@@ -107,8 +75,8 @@ export default {
                     event.preventDefault()
                     break
                 }
-                case this.vertical ? 'ArrowDown' : 'ArrowRight':
-                case this.vertical ? 'Down' : 'Right': {
+                case 'ArrowRight':
+                case 'Right': {
                     let nextIdx = this.getNextItemIdx(this.currentFocus, true)
                     if (nextIdx === null) {
                         // We try to give focus back to the first visible element

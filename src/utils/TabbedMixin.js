@@ -1,4 +1,3 @@
-import Icon from '../components/icon/Icon'
 import SlotComponent from '../utils/SlotComponent'
 import { default as ProviderParentMixin, Sorted } from './ProviderParentMixin'
 import {bound} from './helpers'
@@ -6,24 +5,12 @@ import {bound} from './helpers'
 export default (cmp) => ({
     mixins: [ProviderParentMixin(cmp, Sorted)],
     components: {
-        [Icon.name]: Icon,
         [SlotComponent.name]: SlotComponent
     },
     props: {
         value: {
             type: [String, Number],
             default: undefined
-        },
-        size: String,
-        animated: {
-            type: Boolean,
-            default: true
-        },
-        animation: String,
-        animateInitially: Boolean,
-        vertical: {
-            type: Boolean,
-            default: false
         },
         position: String,
         destroyOnHide: {
@@ -75,14 +62,6 @@ export default (cmp) => ({
          * Sync internal state with external state
          */
         activeId(val, oldValue) {
-            const oldTab = oldValue !== undefined && oldValue !== null
-                ? this.childItems.find((i) => i.value === oldValue) : null
-
-            if (oldTab && this.activeItem) {
-                oldTab.deactivate(this.activeItem.index)
-                this.activeItem.activate(oldTab.index)
-            }
-
             val = this.activeItem
                 ? (typeof this.value === 'number' ? this.items.indexOf(this.activeItem) : this.activeItem.value)
                 : undefined

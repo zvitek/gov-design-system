@@ -1,43 +1,32 @@
 import { mount } from '@vue/test-utils'
-import BTabs from '@components/tabs/Tabs'
-import BTabItem from '@components/tabs/TabItem'
+import GovTabs from '@components/tabs/Tabs'
+import GovTabItem from '@components/tabs/TabItem'
 
 let wrapper
 
 const WrapperComp = {
     template: `
-        <BTabs value="tab1">
-            <BTabItem value="tab1"></BTabItem>
-            <BTabItem value="tab2" :visible="false"></BTabItem>
-        </BTabs>`,
+        <GovTabs value="tab1">
+            <GovTabItem value="tab1"></GovTabItem>
+            <GovTabItem value="tab2" :visible="false"></GovTabItem>
+        </GovTabs>`,
     components: {
-        BTabs, BTabItem
+        GovTabs, GovTabItem
     }
 }
 
-describe('BTabs', () => {
+describe('GovTabs', () => {
     beforeEach(() => {
-        wrapper = mount(WrapperComp).find(BTabs)
+        wrapper = mount(WrapperComp).find(GovTabs)
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('BTabs')
+        expect(wrapper.name()).toBe('GovTabs')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 
     it('render correctly', () => {
         expect(wrapper.html()).toMatchSnapshot()
-    })
-
-    it('manage main classes accordingly', () => {
-        wrapper.setProps({
-            expanded: true,
-            vertical: true,
-            position: 'is-centered'
-        })
-        expect(wrapper.vm.mainClasses['is-fullwidth']).toBeTruthy()
-        expect(wrapper.vm.mainClasses['is-vertical']).toBeTruthy()
-        expect(wrapper.vm.mainClasses['is-centered']).toBeTruthy()
     })
 
     it('emit input event with value when active tab is modified', async () => {
@@ -80,23 +69,23 @@ describe('BTabs', () => {
         const testCmp = {
             template: `
                 <div>
-                    <BTabItem></BTabItem>
-                    <BTabItem></BTabItem>
+                    <GovTabItem></GovTabItem>
+                    <GovTabItem></GovTabItem>
                 </div>`,
-            components: {BTabItem}
+            components: {GovTabItem}
         }
 
         wrapper = mount({
             template: `
-        <BTabs>
-            <test-cmp/>
-            <test-cmp/>
-            <test-cmp/>
-        </BTabs>`,
+                <GovTabs>
+                    <test-cmp/>
+                    <test-cmp/>
+                    <test-cmp/>
+                </GovTabs>`,
             components: {
-                BTabs, testCmp
+                GovTabs, testCmp
             }
-        }).find(BTabs)
+        }).find(GovTabs)
 
         expect(wrapper.vm.items.length).toBe(6)
         expect(wrapper.vm.items.map((i) => i.index)).toEqual([0, 1, 2, 3, 4, 5])
@@ -111,11 +100,11 @@ describe('BTabs', () => {
 
     it('still renders if there is no item', () => {
         wrapper = mount({
-            template: `<BTabs value="tab1"></BTabs>`,
+            template: `<GovTabs value="tab1"></GovTabs>`,
             components: {
-                BTabs
+                GovTabs
             }
-        }).find(BTabs)
+        }).find(GovTabs)
         expect(wrapper.html()).toMatchSnapshot()
     })
 })

@@ -48,9 +48,9 @@ let config = {
     defaultButtonRounded: false,
     defaultSwitchRounded: true,
     defaultCarouselInterval: 3500,
-    defaultTabsExpanded: false,
+    defaultTabsExpanded: false, /* RMEOVE */
     defaultTabsAnimated: true,
-    defaultTabsType: null,
+    defaultTabsType: null, /* RMEOVE */
     defaultStatusIcon: true,
     defaultProgrammaticPromise: false,
     defaultLinkTags: [

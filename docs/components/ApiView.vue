@@ -12,39 +12,39 @@
                     class="subtitle">
                     {{ component.title }}
                 </h3>
-                <b-tabs>
-                    <b-tab-item v-if="component.props" label="Properties">
+                <gov-tabs>
+                    <gov-tab-item v-if="component.props" label="Properties">
                         <b-table
                             :mobile-cards="false"
                             :data="component.props"
                             :columns="propsColumns"
                         />
-                    </b-tab-item>
+                    </gov-tab-item>
 
-                    <b-tab-item v-if="component.slots" label="Slots">
+                    <gov-tab-item v-if="component.slots" label="Slots">
                         <b-table
                             :mobile-cards="false"
                             :data="component.slots"
                             :columns="slotsColumns"
                         />
-                    </b-tab-item>
+                    </gov-tab-item>
 
-                    <b-tab-item v-if="component.events" label="Events">
+                    <gov-tab-item v-if="component.events" label="Events">
                         <b-table
                             :mobile-cards="false"
                             :data="component.events"
                             :columns="eventsColumns"
                         />
-                    </b-tab-item>
+                    </gov-tab-item>
 
-                    <b-tab-item v-if="component.methods" label="Methods">
+                    <gov-tab-item v-if="component.methods" label="Methods">
                         <b-table
                             :mobile-cards="false"
                             :data="component.methods"
                             :columns="methodsColumns"
                         />
-                    </b-tab-item>
-                </b-tabs>
+                    </gov-tab-item>
+                </gov-tabs>
             </div>
         </template>
     </section>

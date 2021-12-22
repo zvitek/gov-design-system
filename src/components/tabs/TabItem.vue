@@ -2,14 +2,14 @@
 import TabbedChildMixin from '../../utils/TabbedChildMixin.js'
 
 export default {
-    name: 'BTabItem',
+    name: 'GovTabItem',
     mixins: [TabbedChildMixin('tab')],
     props: {
         disabled: Boolean
     },
     data() {
         return {
-            elementClass: 'tab-item',
+            elementClass: 'gov-tabs__content is-active',
             elementRole: 'tabpanel'
         }
     }

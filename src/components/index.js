@@ -9,6 +9,7 @@ import Checkbox from './checkbox'
 import Input from './input'
 import Select from './select'
 import Breadcrumb from './breadcrumb'
+import Switch from './switch'
 
 export {
     Button,
@@ -21,5 +22,6 @@ export {
     Checkbox,
     Input,
     Select,
-    Breadcrumb
+    Breadcrumb,
+    Switch
 }

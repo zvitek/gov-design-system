@@ -33,6 +33,7 @@ const router = new Router({
                 route('documentation', 'Documentation'),
                 route('documentation/breadcrumb', 'components/breadcrumb/Breadcrumb'),
                 route('documentation/button', 'components/button/Button'),
+                route('documentation/tabs', 'components/tabs/Tabs'),
                 // Extensions
                 route('extensions', 'Extensions'),
                 route('extensions/cleavejs', 'extensions/cleavejs/Cleavejs'),

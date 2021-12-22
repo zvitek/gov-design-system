@@ -1,27 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BTabs render correctly 1`] = `
-<div class="b-tabs">
-    <nav role="tablist" aria-orientation="horizontal" class="tabs">
-        <ul>
-            <li role="presentation" class="is-active"><a role="tab" id="tab1-tab" aria-controls="tab1-content" aria-selected="true" tabindex="0">
-                    <!----> <span></span></a></li>
-            <li role="presentation" class="" style="display: none;"><a role="tab" id="tab2-tab" aria-controls="tab2-content" aria-selected="false" tabindex="-1">
-                    <!----> <span></span></a></li>
-        </ul>
-    </nav>
-    <section class="tab-content">
-        <div class="tab-item" role="tabpanel" id="tab1-content" aria-labelledby="tab1-label" tabindex="0"></div>
-        <div class="tab-item" role="tabpanel" id="tab2-content" aria-labelledby="tab2-label" tabindex="-1" style="display: none;"></div>
-    </section>
+exports[`GovTabs render correctly 1`] = `
+<div class="gov-tabs">
+    <nav role="tablist" aria-orientation="horizontal" class="gov-tabs__links-holder"><button role="tab" id="tab1-tab" aria-controls="tab1-content" aria-selected="true" tabindex="0" class="gov-tabs__link is-active">
+
+        </button><button role="tab" id="tab2-tab" aria-controls="tab2-content" aria-selected="false" tabindex="-1" class="gov-tabs__link" style="display: none;">
+
+        </button></nav>
+    <div class="gov-tabs__content-holder">
+        <div class="gov-tabs__content is-active">
+            <div class="gov-tabs__content is-active" role="tabpanel" id="tab1-content" aria-labelledby="tab1-label" tabindex="0"></div>
+            <div class="gov-tabs__content is-active" role="tabpanel" id="tab2-content" aria-labelledby="tab2-label" tabindex="-1" style="display: none;"></div>
+        </div>
+    </div>
 </div>
 `;
 
-exports[`BTabs still renders if there is no item 1`] = `
-<div class="b-tabs">
-    <nav role="tablist" aria-orientation="horizontal" class="tabs">
-        <ul></ul>
-    </nav>
-    <section class="tab-content"></section>
+exports[`GovTabs still renders if there is no item 1`] = `
+<div class="gov-tabs">
+    <nav role="tablist" aria-orientation="horizontal" class="gov-tabs__links-holder"></nav>
+    <div class="gov-tabs__content-holder">
+        <div class="gov-tabs__content is-active"></div>
+    </div>
 </div>
 `;

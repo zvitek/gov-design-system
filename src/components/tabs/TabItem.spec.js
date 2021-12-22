@@ -1,6 +1,6 @@
 import {mount} from '@vue/test-utils'
-import BTabs from '@components/tabs/Tabs'
-import BTabItem from '@components/tabs/TabItem'
+import GovTabs from '@components/tabs/Tabs'
+import GovTabItem from '@components/tabs/TabItem'
 
 let wrapper
 let wrapperParent
@@ -12,24 +12,24 @@ const WrapperComp = {
         }
     },
     template: `
-        <BTabs>
-            <BTabItem v-if="show1" value="tab1"/>
-            <BTabItem ref="testItem" value="tab2"/>
-            <BTabItem value="tab3" :visible="false"/>
-        </BTabs>`,
+        <GovTabs>
+            <GovTabItem v-if="show1" value="tab1"/>
+            <GovTabItem ref="testItem" value="tab2"/>
+            <GovTabItem value="tab3" :visible="false"/>
+        </GovTabs>`,
     components: {
-        BTabs, BTabItem
+        GovTabs, GovTabItem
     }
 }
 
-describe('BTabItem', () => {
+describe('GovTabItem', () => {
     beforeEach(() => {
         wrapperParent = mount(WrapperComp)
         wrapper = wrapperParent.find({ ref: 'testItem' })
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('BTabItem')
+        expect(wrapper.name()).toBe('GovTabItem')
         expect(wrapper.isVueInstance()).toBeTruthy()
         expect(wrapper.vm.value).toBe('tab2')
     })
@@ -51,30 +51,14 @@ describe('BTabItem', () => {
         expect(wrapper.vm.index).toBe(0)
     })
 
-    it('transition correctly when activate is called', () => {
-        wrapper.vm.activate(0)
-        expect(wrapper.vm.transitionName).toBe('slide-prev')
-
-        wrapper.vm.activate(2)
-        expect(wrapper.vm.transitionName).toBe('slide-next')
-    })
-
-    it('transition correctly when deactivate is called', () => {
-        wrapper.vm.deactivate(2)
-        expect(wrapper.vm.transitionName).toBe('slide-prev')
-
-        wrapper.vm.deactivate(0)
-        expect(wrapper.vm.transitionName).toBe('slide-next')
-    })
-
     it('doesn\'t mount when it has no parent', () => {
         const spy = jest.spyOn(global.console, 'error').mockImplementation(() => {})
 
         try {
             wrapper = mount({
-                template: `<BTabItem/>`,
+                template: `<GovTabItem/>`,
                 components: {
-                    BTabItem
+                    GovTabItem
                 },
                 destroyed() {
                     spy()
@@ -90,13 +74,13 @@ describe('BTabItem', () => {
     it('doesn\'t render when parent has destroyOnHide', async () => {
         wrapper = mount({
             template: `
-        <BTabs :destroy-on-hide="true">
-            <BTabItem></BTabItem>
-        </BTabs>`,
+                <GovTabs :destroy-on-hide="true">
+                    <GovTabItem></GovTabItem>
+                </GovTabs>`,
             components: {
-                BTabs, BTabItem
+                GovTabs, GovTabItem
             }
-        }).find(BTabItem)
+        }).find(GovTabItem)
 
         expect(wrapper.html()).not.toBe(undefined)
 
@@ -110,10 +94,10 @@ describe('BTabItem', () => {
     it('unregisters when destroyed', async () => {
         const wrapper = mount({
             template: `
-        <BTabs>
-            <BTabItem ref="item1"/>
-            <BTabItem v-if="item2" ref="item2"/>
-        </BTabs>`,
+                <GovTabs>
+                    <GovTabItem ref="item1"/>
+                    <GovTabItem v-if="item2" ref="item2"/>
+                </GovTabs>`,
             props: {
                 item2: {
                     type: Boolean,
@@ -121,23 +105,23 @@ describe('BTabItem', () => {
                 }
             },
             components: {
-                BTabs, BTabItem
+                GovTabs, GovTabItem
             }
         })
 
         expect(wrapper.find({ref: 'item2'})).toBeTruthy()
-        expect(wrapper.find(BTabs).vm.items.length).toBe(2)
+        expect(wrapper.find(GovTabs).vm.items.length).toBe(2)
 
         wrapper.setProps({item2: false})
 
-        expect(wrapper.find(BTabs).vm.items.length).toBe(1)
+        expect(wrapper.find(GovTabs).vm.items.length).toBe(1)
 
         wrapper.setProps({item2: true})
-        wrapper.find(BTabs).setProps({value: 1})
+        wrapper.find(GovTabs).setProps({value: 1})
 
         await wrapper.vm.$nextTick()
 
-        expect(wrapper.find(BTabs).vm.items.length).toBe(2)
+        expect(wrapper.find(GovTabs).vm.items.length).toBe(2)
         expect(wrapper.find({ref: 'item2'}).vm.isActive).toBeTruthy()
     })
 })

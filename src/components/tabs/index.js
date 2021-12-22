@@ -15,6 +15,6 @@ use(Plugin)
 export default Plugin
 
 export {
-    Tabs as BTabs,
-    TabItem as BTabItem
+    Tabs as GovTabs,
+    TabItem as GovTabItem
 }
