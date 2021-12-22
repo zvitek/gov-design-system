@@ -1,51 +1,46 @@
 <template>
-    <label
-        class="switch"
-        :class="newClass"
-        ref="label"
-        :disabled="disabled"
-        @click="focus"
-        @keydown.prevent.enter="$refs.label.click()"
-        @mousedown="isMouseDown = true"
-        @mouseup="isMouseDown = false"
-        @mouseout="isMouseDown = false"
-        @blur="isMouseDown = false">
+    <div
+        class="gov-form-control gov-form-control--custom"
+        :class="wrapperClass">
         <input
+            class="gov-form-control__toggle"
             v-model="computedValue"
             type="checkbox"
             ref="input"
-            @click.stop
             :disabled="disabled"
             :name="name"
+            :checked="computedValue === trueValue"
             :required="required"
             :value="nativeValue"
             :true-value="trueValue"
             :false-value="falseValue"
             :aria-labelledby="ariaLabelledby">
-        <span
-            class="check"
-            :class="checkClasses"/>
-        <span
-            v-if="showControlLabel"
+        <label
+            class="gov-form-control__label"
+            ref="label"
+            :disabled="disabled"
+            @click="focus"
             :id="ariaLabelledby"
-            class="control-label"><slot/></span>
-    </label>
+            @keydown.prevent.enter="$refs.label.click()"
+            @mousedown="isMouseDown = true"
+            @mouseup="isMouseDown = false"
+            @mouseout="isMouseDown = false"
+            @blur="isMouseDown = false">
+            <template v-if="showControlLabel"><slot/></template>
+        </label>
+        <span class="gov-form-control__indicator"/>
+    </div>
 </template>
 
 <script>
-import config from '../../utils/config'
-
 export default {
     name: 'GovSwitch',
     props: {
         value: [String, Number, Boolean, Function, Object, Array, Date],
         nativeValue: [String, Number, Boolean, Function, Object, Array, Date],
         disabled: Boolean,
-        type: String,
-        passiveType: String,
         name: String,
         required: Boolean,
-        size: String,
         ariaLabelledby: String,
         trueValue: {
             type: [String, Number, Boolean, Function, Object, Array, Date],
@@ -55,17 +50,7 @@ export default {
             type: [String, Number, Boolean, Function, Object, Array, Date],
             default: false
         },
-        rounded: {
-            type: Boolean,
-            default: () => {
-                return config.defaultSwitchRounded
-            }
-        },
-        outlined: {
-            type: Boolean,
-            default: false
-        },
-        leftLabel: {
+        error: {
             type: Boolean,
             default: false
         }
@@ -86,26 +71,13 @@ export default {
                 this.$emit('input', value)
             }
         },
-        newClass() {
-            return [
-                this.size,
-                {
-                    'is-disabled': this.disabled,
-                    'is-rounded': this.rounded,
-                    'is-outlined': this.outlined,
-                    'has-left-label': this.leftLabel
-                }
-            ]
-        },
-        checkClasses() {
-            return [
-                { 'is-elastic': this.isMouseDown && !this.disabled },
-                (this.passiveType && `${this.passiveType}-passive`),
-                this.type
-            ]
-        },
         showControlLabel() {
             return !!this.$slots.default
+        },
+        wrapperClass() {
+            return {
+                'gov-form-control--error': this.error
+            }
         }
     },
     watch: {
@@ -118,8 +90,20 @@ export default {
     },
     methods: {
         focus() {
+            if (this.disabled) {
+                return
+            }
             // MacOS FireFox and Safari do not focus when clicked
             this.$refs.input.focus()
+            this.change()
+        },
+        change() {
+            if (this.$refs.input.checked) {
+                this.newValue = this.falseValue
+            } else {
+                this.newValue = this.trueValue
+            }
+            this.computedValue = this.newValue
         }
     }
 }

@@ -25,7 +25,7 @@ describe('GovSwitch', () => {
 
     it('renders input element by default', () => {
         expect(wrapper.contains('input')).toBeTruthy()
-        expect(wrapper.classes()).toContain('switch')
+        expect(wrapper.classes()).toContain('gov-form-control')
     })
 
     it('updates internal value when v-model is changed', () => {
@@ -51,24 +51,10 @@ describe('GovSwitch', () => {
         })
     })
 
-    it('applies passiveType prop properly', () => {
-        const passiveType = 'is-danger'
-        const value = false
-        wrapper.setProps({ passiveType, value })
-        const switchElement = wrapper.find('.check')
-        expect(switchElement.classes()).toContain('is-danger-passive')
-    })
-
-    it('does not have a label at left by default', () => {
-        const value = false
-        wrapper.setProps({ value })
-        expect(wrapper.classes()).not.toContain('has-left-label')
-    })
-
-    it('has label at left is left-label prop has been sent', () => {
-        const leftLabel = true
-        const value = false
-        wrapper.setProps({ leftLabel, value })
-        expect(wrapper.classes()).toContain('has-left-label')
+    it('applies error prop properly', () => {
+        const error = true
+        wrapper.setProps({ error })
+        const switchElement = wrapper.find('.gov-form-control')
+        expect(switchElement.classes()).toContain('gov-form-control--error')
     })
 })

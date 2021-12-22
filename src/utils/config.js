@@ -46,7 +46,7 @@ let config = {
     defaultTrapFocus: true,
     defaultAutoFocus: true,
     defaultButtonRounded: false,
-    defaultSwitchRounded: true,
+    defaultSwitchRounded: true, /* REMOVE */
     defaultCarouselInterval: 3500,
     defaultTabsExpanded: false, /* RMEOVE */
     defaultTabsAnimated: true,
