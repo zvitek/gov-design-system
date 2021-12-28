@@ -12,6 +12,7 @@
             "category": "UI components",
             "pages": [
                 "documentation/accordion",
+                "documentation/badge",
                 "documentation/breadcrumb",
                 "documentation/button",
                 "documentation/autocomplete",
@@ -46,7 +47,6 @@
                 "documentation/steps",
                 "documentation/table",
                 "documentation/tabs",
-                "documentation/tag",
                 "documentation/toast",
                 "documentation/tooltip"
             ]

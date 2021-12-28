@@ -41,7 +41,7 @@ const router = new Router({
                 route('documentation/modal', 'components/modal/Modal'),
                 route('documentation/tabs', 'components/tabs/Tabs'),
                 route('documentation/accordion', 'components/accordion/Accordion'),
-                route('documentation/tag', 'components/tag/Tag'),
+                route('documentation/badge', 'components/badge/Badge'),
                 route('documentation/dialog', 'components/dialog/Dialog'),
                 route('documentation/toast', 'components/toast/Toast'),
                 route('documentation/snackbar', 'components/snackbar/Snackbar'),

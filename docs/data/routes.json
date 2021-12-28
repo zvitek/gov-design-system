@@ -81,6 +81,18 @@
             "documentation/accordion"
         ]
     },
+    "documentation/badge": {
+        "title": "Badge",
+        "subtitle": "Badge labels to insert anywhere",
+        "path": "/documentation/badge",
+        "githubPath": "pages/components/badge/Badge.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/badge"
+        ]
+    },
     "documentation/dialog": {
         "title": "Dialog",
         "subtitle": "Dialogs inform users about a specific task and may contain critical information or require decisions",
@@ -168,18 +180,6 @@
             "documentation/tabs"
         ],
         "isUpdated": true
-    },
-    "documentation/tag": {
-        "title": "Tag",
-        "subtitle": "Tag labels to insert anywhere",
-        "path": "/documentation/tag",
-        "githubPath": "pages/components/tag/Tag.vue",
-        "menu": "documentation",
-        "breadcrumb": [
-            "/",
-            "documentation",
-            "documentation/tag"
-        ]
     },
     "documentation/toast": {
         "title": "Toast",

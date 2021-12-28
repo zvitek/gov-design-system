@@ -1,4 +1,5 @@
 import Autocomplete from './autocomplete'
+import Badge from './badge'
 import Breadcrumb from './breadcrumb'
 import Button from './button'
 import Carousel from './carousel'
@@ -33,7 +34,6 @@ import Steps from './steps'
 import Switch from './switch'
 import Table from './table'
 import Tabs from './tabs'
-import Tag from './tag'
 import Taginput from './taginput'
 import Timepicker from './timepicker'
 import Toast from './toast'
@@ -42,6 +42,7 @@ import Upload from './upload'
 
 export {
     Autocomplete,
+    Badge,
     Breadcrumb,
     Button,
     Carousel,
@@ -76,7 +77,6 @@ export {
     Switch,
     Table,
     Tabs,
-    Tag,
     Taginput,
     Timepicker,
     Toast,
