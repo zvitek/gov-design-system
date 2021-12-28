@@ -11,6 +11,14 @@ const mdiIcons = {
     iconPrefix: 'mdi-'
 }
 
+const govIcons = {
+    iconPrefix: 'gov-icon--'
+}
+
+const govComplexIcons = {
+    iconPrefix: 'gov-complex-icon--'
+}
+
 const faIcons = () => {
     const faIconPrefix = config && config.defaultIconComponent ? '' : 'fa-'
     return {
@@ -44,7 +52,9 @@ const getIcons = () => {
         far: faIcons(),
         fad: faIcons(),
         fab: faIcons(),
-        fal: faIcons()
+        fal: faIcons(),
+        'gov-icon': govIcons,
+        'gov-complex-icon': govComplexIcons
     }
 
     if (config && config.customIconPacks) {

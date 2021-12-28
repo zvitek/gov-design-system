@@ -49,7 +49,7 @@
                     <button
                         class="button is-primary"
                         @click="sort">
-                        <b-icon
+                        <gov-icon
                             :class="{ 'is-desc': columnIsDesc(sortMultipleSelect) }"
                             :icon="sortIcon"
                             :pack="iconPack"
@@ -60,7 +60,7 @@
                     <button
                         class="button is-primary"
                         @click="removePriority">
-                        <b-icon
+                        <gov-icon
                             icon="delete"
                             :size="sortIconSize"
                             both
@@ -71,7 +71,7 @@
                     v-else-if="!sortMultiple"
                     class="button is-primary"
                     @click="sort">
-                    <b-icon
+                    <gov-icon
                         v-show="currentSortColumn === mobileSort"
                         :class="{ 'is-desc': !isAsc }"
                         :icon="sortIcon"

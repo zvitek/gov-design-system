@@ -59,7 +59,7 @@
                             :class="['checkbox-cell', { 'is-sticky': stickyCheckbox } ]"
                             v-if="checkable && checkboxPosition === 'left'">
                             <template v-if="headerCheckable">
-                                <b-checkbox
+                                <gov-checkbox
                                     autocomplete="off"
                                     :value="isAllChecked"
                                     :disabled="isAllUncheckable"
@@ -105,7 +105,7 @@
                                                 sortMultipleDataComputed.length > 0 &&
                                                 sortMultipleDataComputed.filter(i =>
                                             i.field === column.field).length > 0">
-                                            <b-icon
+                                            <gov-icon
                                                 :icon="sortIcon"
                                                 :pack="iconPack"
                                                 both
@@ -121,7 +121,7 @@
                                                 @click.stop="removeSortingPriority(column)"/>
                                         </template>
 
-                                        <b-icon
+                                        <gov-icon
                                             v-else
                                             :icon="sortIcon"
                                             :pack="iconPack"
@@ -141,7 +141,7 @@
                             :class="['checkbox-cell', { 'is-sticky': stickyCheckbox } ]"
                             v-if="checkable && checkboxPosition === 'right'">
                             <template v-if="headerCheckable">
-                                <b-checkbox
+                                <gov-checkbox
                                     autocomplete="off"
                                     :value="isAllChecked"
                                     :disabled="isAllUncheckable"
@@ -239,7 +239,7 @@
                                     v-if="hasDetailedVisible(row)"
                                     role="button"
                                     @click.stop="toggleDetails(row)">
-                                    <b-icon
+                                    <gov-icon
                                         :icon="detailIcon"
                                         :pack="iconPack"
                                         both
@@ -250,7 +250,7 @@
                             <td
                                 :class="['checkbox-cell', { 'is-sticky': stickyCheckbox } ]"
                                 v-if="checkable && checkboxPosition === 'left'">
-                                <b-checkbox
+                                <gov-checkbox
                                     autocomplete="off"
                                     :disabled="!isRowCheckable(row)"
                                     :value="isRowChecked(row)"
@@ -281,7 +281,7 @@
                             <td
                                 :class="['checkbox-cell', { 'is-sticky': stickyCheckbox } ]"
                                 v-if="checkable && checkboxPosition === 'right'">
-                                <b-checkbox
+                                <gov-checkbox
                                     autocomplete="off"
                                     :disabled="!isRowCheckable(row)"
                                     :value="isRowChecked(row)"

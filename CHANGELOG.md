@@ -1519,10 +1519,10 @@ this.$modal.open({
         </b-table-column>
 
         <b-table-column field="gender" label="Gender">
-            <b-icon
+            <gov-icon
                 pack="fa"
                 :icon="props.row.gender === 'Male' ? 'mars' : 'venus'">
-            </b-icon>
+            </gov-icon>
             {{ props.row.gender }}
         </b-table-column>
     </template>

@@ -20,7 +20,7 @@
                 v-if="!isExpanded && !expanded"
                 class="codeview-showcode"
                 @click="isExpanded = true">
-                <b-icon
+                <gov-icon
                     icon="code-tags"
                     size="is-small"
                     custom-class="mdi-18px"
@@ -31,7 +31,7 @@
                 v-if="!expanded"
                 class="codeview-hidecode"
                 @click="isExpanded = false">
-                <b-icon
+                <gov-icon
                     icon="eye-off-outline"
                     size="is-small"
                     custom-class="mdi-18px"

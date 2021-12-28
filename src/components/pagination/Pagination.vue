@@ -8,7 +8,7 @@
                 class: 'pagination-previous',
                 'aria-label': ariaPreviousLabel
         })">
-            <b-icon
+            <gov-icon
                 :icon="iconPrev"
                 :pack="iconPack"
                 both
@@ -20,7 +20,7 @@
             :disabled="!hasPrev"
             :page="getPage(current - 1)"
             :aria-label="ariaPreviousLabel">
-            <b-icon
+            <gov-icon
                 :icon="iconPrev"
                 :pack="iconPack"
                 both
@@ -34,7 +34,7 @@
                 class: 'pagination-next',
                 'aria-label': ariaNextLabel
         })">
-            <b-icon
+            <gov-icon
                 :icon="iconNext"
                 :pack="iconPack"
                 both
@@ -46,7 +46,7 @@
             :disabled="!hasNext"
             :page="getPage(current + 1)"
             :aria-label="ariaNextLabel">
-            <b-icon
+            <gov-icon
                 :icon="iconNext"
                 :pack="iconPack"
                 both

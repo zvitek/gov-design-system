@@ -13,5 +13,5 @@ use(Plugin)
 export default Plugin
 
 export {
-    Icon as BIcon
+    Icon as GovIcon
 }

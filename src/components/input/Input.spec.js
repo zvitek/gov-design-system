@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import BInput from '@components/input/Input'
-import BIcon from '@components/icon/Icon'
+import GovIcon from '@components/icon/Icon'
 
 let wrapper
 
@@ -33,7 +33,7 @@ describe('BInput', () => {
 
     it('displays the icon when the icon property is true', () => {
         wrapper.setProps({ icon: 'magnify' })
-        const target = wrapper.find(BIcon)
+        const target = wrapper.find(GovIcon)
 
         expect(target.exists()).toBeTruthy()
     })

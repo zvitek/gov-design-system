@@ -1,12 +1,10 @@
 {
-  "name": "gov",
-  "version": "0.9.13",
+  "name": "gowue",
+  "version": "0.1.0",
   "homepage": "https://gov.org",
-  "description": "Lightweight UI components for Vue.js based on Bulma",
-  "author": "Rafael Beraldo <rafael.pimpa@gmail.com>",
-  "maintainers": [
-    "Walter Tommasi <tommsi20@gmail.com>"
-  ],
+  "description": "Lightweight UI components for Vue.js based on Design system gov.cz",
+  "author": "Zdeněk Vítek <zvitek@iwory.cz>",
+  "maintainers": [],
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,10 +21,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gov/gov.git"
+    "url": "https://github.com/gowue/gowue.git"
   },
   "bugs": {
-    "url": "https://github.com/gov/gov/issues"
+    "url": "https://github.com/gowue/gowue/issues"
   },
   "vetur": {
     "tags": "dist/vetur/tags.json",

@@ -11,7 +11,7 @@
                     active-class="">
                     <img
                         v-if="light"
-                        src="../assets/gov-light.png"
+                        src="../assets/gowue-light.svg"
                         alt="Gov">
                     <img
                         v-else
@@ -20,30 +20,12 @@
                 </router-link>
 
                 <a
-                    class="navbar-item"
+                    class="navbar-item gov-link--external-unset"
                     :class="{ 'has-text-dark': !light }"
-                    href="https://github.com/gov/gov"
+                    href="https://github.com/gowue/gowue"
                     target="_blank"
                     title="Github">
-                    <b-icon icon="github-circle"/>
-                </a>
-
-                <a
-                    class="navbar-item"
-                    :class="{ 'has-text-discord': !light }"
-                    href="https://discordapp.com/invite/ZkdFJMr"
-                    target="_blank"
-                    title="Discord">
-                    <b-icon icon="discord"/>
-                </a>
-
-                <a
-                    class="navbar-item"
-                    :class="{ 'has-text-twitter': !light }"
-                    href="https://twitter.com/walter_tommasi"
-                    target="_blank"
-                    title="Twitter">
-                    <b-icon icon="twitter"/>
+                    <gov-icon icon="github-circle"/>
                 </a>
 
                 <span
@@ -69,31 +51,23 @@
                         Documentation
                     </router-link>
 
-                    <router-link to="/extensions" class="navbar-item">
-                        Extensions
-                    </router-link>
-
-                    <router-link to="/expo" class="navbar-item">
-                        Expo
-                    </router-link>
-
                     <div class="navbar-item has-dropdown is-hoverable">
                         <div class="navbar-link">Info</div>
 
                         <div class="navbar-dropdown is-boxed">
                             <strong class="navbar-item is-version">
-                                <span class="has-text-primary">Gov version</span>
+                                <span class="has-text-primary">Gowue version</span>
                                 <span class="has-text-grey">{{ version }}</span>
                             </strong>
                             <strong class="navbar-item is-version">
-                                <span class="has-text-bulma">Bulma version</span>
-                                <span class="has-text-grey">{{ bulmaVersion }}</span>
+                                <span class="has-text-bulma">Design system version</span>
+                                <span class="has-text-grey">{{ govDsVersion }}</span>
                             </strong>
 
                             <hr class="navbar-divider">
                             <a
                                 class="navbar-item"
-                                href="https://github.com/gov/gov/releases"
+                                href="https://github.com/gowue/gowue/releases"
                                 target="_blank">
                                 Changelogs
                             </a>
@@ -107,7 +81,7 @@
 
 <script>
 import govPackage from '../../package'
-import bulmaPackage from 'bulma/package'
+// import bulmaPackage from 'bulma/package'
 
 export default {
     props: {
@@ -117,7 +91,7 @@ export default {
         return {
             isMenuActive: false,
             version: govPackage.version,
-            bulmaVersion: bulmaPackage.version
+            govDsVersion: 0 // bulmaPackage.version
         }
     },
     methods: {

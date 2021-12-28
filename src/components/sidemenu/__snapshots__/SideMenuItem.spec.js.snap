@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovSideMenuItem render correctly 1`] = `
+<li class="gov-sidenav__item"><a class="gov-sidenav__link">
+        <!----> </a></li>
+`;

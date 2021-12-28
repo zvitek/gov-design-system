@@ -1,5 +1,11 @@
 <template>
-    <span class="icon" :class="[newType, size]">
+    <span
+        :class="[newPack, newIcon]"
+        v-if="gov || govComplex" />
+    <span
+        class="icon"
+        :class="[size]"
+        v-else>
         <i
             v-if="!useIconComponent"
             :class="[newPack, newIcon, newCustomSize, customClass]"/>
@@ -18,16 +24,23 @@ import config from '../../utils/config'
 import getIcons from '../../utils/icons'
 
 export default {
-    name: 'BIcon',
+    name: 'GovIcon',
     props: {
-        type: [String, Object],
         component: String,
         pack: String,
         icon: String,
         size: String,
         customSize: String,
         customClass: String,
-        both: Boolean // This is used internally to show both MDI and FA icon
+        both: Boolean, // This is used internally to show both MDI and FA icon
+        gov: {
+            type: Boolean,
+            default: false
+        },
+        govComplex: {
+            type: Boolean,
+            default: false
+        }
     },
     computed: {
         iconConfig() {
@@ -49,26 +62,9 @@ export default {
             return `${this.iconPrefix}${this.getEquivalentIconOf(this.icon)}`
         },
         newPack() {
-            return this.pack || config.defaultIconPack
-        },
-        newType() {
-            if (!this.type) return
-
-            let splitType = []
-            if (typeof this.type === 'string') {
-                splitType = this.type.split('-')
-            } else {
-                for (let key in this.type) {
-                    if (this.type[key]) {
-                        splitType = key.split('-')
-                        break
-                    }
-                }
-            }
-            if (splitType.length <= 1) return
-
-            const [, ...type] = splitType
-            return `has-text-${type.join('-')}`
+            if (this.gov) return 'gov-icon'
+            else if (this.govComplex) return 'gov-complex-icon'
+            else return this.pack || config.defaultIconPack
         },
         newCustomSize() {
             return this.customSize || this.customSizeByPack

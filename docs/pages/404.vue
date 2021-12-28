@@ -5,7 +5,7 @@
         <section class="hero is-medium is-light">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <b-icon icon="emoticon-sad" size="is-large" type="is-primary"/>
+                    <gov-icon icon="emoticon-sad" size="is-large" type="is-primary"/>
                     <h1 class="title">
                         {{ $route.meta.title }}
                     </h1>

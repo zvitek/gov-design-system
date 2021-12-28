@@ -91,13 +91,13 @@ describe('Visual Regression Testing', () => {
         })
     })
 
-    it('...documentation/collapse should load correct elements and functionalities on page', () => {
+    it('...documentation/accordion should load correct elements and functionalities on page', () => {
         cy.visit(`http://localhost:8080/documentation/collapse`)
 
         // Let browser load
         cy.wait(1000)
         // Screenshot window
-        cy.eyesCheckWindow('Documentation collapse')
+        cy.eyesCheckWindow('Documentation accordion')
 
         // Click "click me" button
         cy.get('div.example-component:first button')
@@ -114,7 +114,7 @@ describe('Visual Regression Testing', () => {
         // Screenshot affected elements
         cy.eyesCheckWindow({
             sizeMode: 'selector', // mode
-            selector: 'div.collapse.panel' // CSS Selector
+            selector: 'div.accordion.panel' // CSS Selector
         })
     })
 
@@ -176,10 +176,10 @@ describe('Visual Regression Testing', () => {
         // Screenshot affected elements
         cy.eyesCheckWindow({
             sizeMode: 'selector', // mode
-            selector: 'div.dropdown-menu:nth-child(3)'
+            selector: 'div.dropdown-sidemenu:nth-child(3)'
         })
 
-        // Click menu button
+        // Click sidemenu button
         cy.get('.docs-main-container a.navbar-item:first')
             .click()
         // Screenshot affected elements
@@ -188,7 +188,7 @@ describe('Visual Regression Testing', () => {
             selector: 'div.example-component:nth-child(2) > div.dropdown-content'
         })
 
-        // Click next menu button
+        // Click next sidemenu button
         cy.get('.docs-main-container a.navbar-item')
             .eq(1)
             .click()
@@ -625,13 +625,13 @@ describe('Visual Regression Testing', () => {
         })
     })
 
-    it('...documentation/menu should load correct elements and functionalities on page', () => {
+    it('...documentation/sidemenu should load correct elements and functionalities on page', () => {
         cy.visit(`http://localhost:8080/documentation/menu`)
 
         // Let browser load
         cy.wait(1000)
         // Screenshot window
-        cy.eyesCheckWindow('Documentation menu')
+        cy.eyesCheckWindow('Documentation sidemenu')
     })
 
     it('...documentation/message should load correct elements and functionalities on page', () => {

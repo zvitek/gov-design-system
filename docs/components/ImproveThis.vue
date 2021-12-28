@@ -7,7 +7,7 @@
             </p>
             <p>
                 <a
-                    :href="`https://github.com/gov/gov/blob/dev/docs/${githubPath}`"
+                    :href="`https://github.com/gowue/gowue/blob/dev/docs/${githubPath}`"
                     target="_blank"
                     style="text-decoration: underline">
                     Improve this page on GitHub

@@ -28,7 +28,7 @@
             </select>
         </span>
 
-        <b-icon
+        <gov-icon
             v-if="icon"
             class="is-left"
             :icon="icon"

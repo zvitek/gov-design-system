@@ -9,41 +9,30 @@
             ]
         },
         {
-            "category": "Layout",
-            "pages": [
-                "documentation/layout"
-            ]
-        },
-        {
             "category": "UI components",
             "pages": [
+                "documentation/accordion",
                 "documentation/breadcrumb",
                 "documentation/button",
-                {
-                    "category": "Form controls",
-                    "pages": [
-                        "documentation/autocomplete",
-                        "documentation/checkbox",
-                        "documentation/clockpicker",
-                        "documentation/datepicker",
-                        "documentation/datetimepicker",
-                        "documentation/field",
-                        "documentation/input",
-                        "documentation/numberinput",
-                        "documentation/radio",
-                        "documentation/rate",
-                        "documentation/select",
-                        "documentation/slider",
-                        "documentation/switch",
-                        "documentation/taginput",
-                        "documentation/timepicker",
-                        "documentation/upload"
-                    ]
-                },
+                "documentation/autocomplete",
+                "documentation/checkbox",
+                "documentation/clockpicker",
+                "documentation/datepicker",
+                "documentation/datetimepicker",
+                "documentation/field",
+                "documentation/input",
+                "documentation/numberinput",
+                "documentation/radio",
+                "documentation/rate",
+                "documentation/select",
+                "documentation/slider",
+                "documentation/switch",
+                "documentation/taginput",
+                "documentation/timepicker",
+                "documentation/upload",
                 "documentation/icon",
                 "documentation/image",
                 "documentation/loading",
-                "documentation/menu",
                 "documentation/message",
                 "documentation/modal",
                 "documentation/navbar",
@@ -52,6 +41,7 @@
                 "documentation/progress",
                 "documentation/skeleton",
                 "documentation/sidebar",
+                "documentation/sidemenu",
                 "documentation/snackbar",
                 "documentation/steps",
                 "documentation/table",

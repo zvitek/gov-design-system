@@ -14,20 +14,11 @@
                         <b-field>
                             <p class="control">
                                 <a
-                                    class="button"
-                                    href="https://github.com/gov/gov"
+                                    class="button gov-link--external-unset"
+                                    href="https://github.com/gowue/gowue"
                                     target="_blank">
-                                    <b-icon icon="github-circle"/>
+                                    <gov-icon icon="github-circle"/>
                                     <span>GitHub</span>
-                                </a>
-                            </p>
-                            <p class="control">
-                                <a
-                                    class="button is-twitter"
-                                    href="https://twitter.com/walter_tommasi"
-                                    target="_blank">
-                                    <b-icon icon="twitter"/>
-                                    <span>Twitter</span>
                                 </a>
                             </p>
                         </b-field>

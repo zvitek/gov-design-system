@@ -7,7 +7,7 @@
             <div class="media-content">
                 <h3 class="subtitle">Install Gov via npm</h3>
                 <CodeView code="npm install gov" lang="bash" expanded/>
-                <p class="content">Or clone the repository: <a href="https://github.com/gov/gov" target="_blank">https://github.com/gov/gov</a></p>
+                <p class="content">Or clone the repository: <a href="https://github.com/gowue/gowue" target="_blank">https://github.com/gowue/gowue</a></p>
             </div>
         </div>
 

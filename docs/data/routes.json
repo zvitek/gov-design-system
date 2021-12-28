@@ -69,16 +69,16 @@
             "documentation/layout"
         ]
     },
-    "documentation/collapse": {
-        "title": "Collapse",
-        "subtitle": "Collapse is a easy way to toggle what you want",
-        "path": "/documentation/collapse",
-        "githubPath": "pages/components/collapse/Collapse.vue",
+    "documentation/accordion": {
+        "title": "Accordion",
+        "subtitle": "Accordion is a easy way to toggle what you want",
+        "path": "/documentation/accordion",
+        "githubPath": "pages/components/accordion/Accordion.vue",
         "menu": "documentation",
         "breadcrumb": [
             "/",
             "documentation",
-            "documentation/collapse"
+            "documentation/accordion"
         ]
     },
     "documentation/dialog": {
@@ -475,16 +475,16 @@
         ],
         "isUpdated": true
     },
-    "documentation/menu": {
-        "title": "Menu",
+    "documentation/sidemenu": {
+        "title": "Side Menu",
         "subtitle": "A simple vertical menu",
-        "path": "/documentation/menu",
-        "githubPath": "pages/components/menu/Menu.vue",
+        "path": "/documentation/sidemenu",
+        "githubPath": "pages/components/sidemenu/SideMenu.vue",
         "menu": "documentation",
         "breadcrumb": [
             "/",
             "documentation",
-            "documentation/menu"
+            "documentation/sidemenu"
         ]
     },
      "documentation/slider": {

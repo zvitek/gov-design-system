@@ -25,7 +25,7 @@ describe('BNavbarDropdown', () => {
         expect(wrapper.vm.newActive).toBeFalsy()
     })
 
-    it('sets newActive when menu is shown/closed', () => {
+    it('sets newActive when sidemenu is shown/closed', () => {
         wrapper.vm.showMenu()
         expect(wrapper.vm.newActive).toBeTruthy()
 

@@ -3,7 +3,7 @@ import Breadcrumb from './breadcrumb'
 import Button from './button'
 import Carousel from './carousel'
 import Checkbox from './checkbox'
-import Collapse from './collapse'
+import Accordion from './accordion'
 import Clockpicker from './clockpicker'
 import Datepicker from './datepicker'
 import Datetimepicker from './datetimepicker'
@@ -14,7 +14,7 @@ import Icon from './icon'
 import Image from './image'
 import Input from './input'
 import Loading from './loading'
-import Menu from './menu'
+import Menu from './sidemenu'
 import Message from './message'
 import Modal from './modal'
 import Notification from './notification'
@@ -47,7 +47,7 @@ export {
     Carousel,
     Checkbox,
     Clockpicker,
-    Collapse,
+    Accordion,
     Datepicker,
     Datetimepicker,
     Dialog,

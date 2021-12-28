@@ -1,22 +1,46 @@
 import { shallowMount } from '@vue/test-utils'
-import BIcon from '@components/icon/Icon'
+import GovIcon from '@components/icon/Icon'
 
-describe('BIcon', () => {
+describe('GovIcon', () => {
     it('render correctly', () => {
-        const wrapper = shallowMount(BIcon)
+        const wrapper = shallowMount(GovIcon)
 
         expect(wrapper.html()).toMatchSnapshot()
     })
 
     it('is vue instance', () => {
-        const wrapper = shallowMount(BIcon)
+        const wrapper = shallowMount(GovIcon)
 
-        expect(wrapper.name()).toBe('BIcon')
+        expect(wrapper.name()).toBe('GovIcon')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 
+    it('render gov icon when icon property is passed', () => {
+        const wrapper = shallowMount(GovIcon, {
+            propsData: {
+                icon: 'plus',
+                gov: true
+            }
+        })
+
+        expect(wrapper.classes()).toContain('gov-icon')
+        expect(wrapper.find('span').classes()).toContain('gov-icon', 'gov-icon--plus')
+    })
+
+    it('render gov complex icon when icon property is passed', () => {
+        const wrapper = shallowMount(GovIcon, {
+            propsData: {
+                icon: 'senior',
+                govComplex: true
+            }
+        })
+
+        expect(wrapper.classes()).toContain('gov-complex-icon')
+        expect(wrapper.find('span').classes()).toContain('gov-complex-icon', 'gov-complex-icon--senior')
+    })
+
     it('render icon when icon property is passed', () => {
-        const wrapper = shallowMount(BIcon, {
+        const wrapper = shallowMount(GovIcon, {
             propsData: { icon: 'eye' }
         })
 
@@ -24,30 +48,8 @@ describe('BIcon', () => {
         expect(wrapper.find('i').classes()).toContain('mdi', 'mdi-eye', 'mdi-24px')
     })
 
-    it('render a colored icon when type is passed', () => {
-        const wrapper = shallowMount(BIcon, {
-            propsData: {
-                icon: 'eye',
-                type: 'is-primary'
-            }
-        })
-
-        expect(wrapper.classes()).toContain('has-text-primary')
-    })
-
-    it('returns correct color for newType when type is passed as an object', () => {
-        const wrapper = shallowMount(BIcon, {
-            propsData: {
-                icon: 'eye',
-                type: {'is-primary': true}
-            }
-        })
-
-        expect(wrapper.vm.newType).toEqual('has-text-primary')
-    })
-
     it('render icon package correctly when the pack property is is passed.', () => {
-        const wrapper = shallowMount(BIcon, {
+        const wrapper = shallowMount(GovIcon, {
             propsData: {
                 icon: 'eye',
                 pack: 'fa'
@@ -57,8 +59,8 @@ describe('BIcon', () => {
         expect(wrapper.find('i').classes()).toContain('fa-eye')
     })
 
-    it('use both packages when the both property is is passed', () => {
-        const wrapper = shallowMount(BIcon, {
+    it('use both packages when the both property is passed', () => {
+        const wrapper = shallowMount(GovIcon, {
             propsData: {
                 icon: 'eye',
                 both: true
@@ -96,7 +98,7 @@ describe('BIcon', () => {
     })
 
     it('display size when size propery is passed', () => {
-        const wrapper = shallowMount(BIcon, {
+        const wrapper = shallowMount(GovIcon, {
             propsData: {
                 icon: 'eye'
             }
@@ -112,7 +114,7 @@ describe('BIcon', () => {
     })
 
     it('overrides icon font size when customSize property is passed', () => {
-        const wrapper = shallowMount(BIcon, {
+        const wrapper = shallowMount(GovIcon, {
             propsData: {
                 icon: 'eye',
                 pack: 'fa',
@@ -124,7 +126,7 @@ describe('BIcon', () => {
     })
 
     it('render custom classes when customClass property is passed', () => {
-        const wrapper = shallowMount(BIcon, {
+        const wrapper = shallowMount(GovIcon, {
             propsData: {
                 icon: 'eye',
                 customClass: 'foo-bar'

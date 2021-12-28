@@ -19,7 +19,7 @@ describe('BNavbar', () => {
         expect(wrapper.contains('nav')).toBeTruthy()
     })
 
-    it('should emmit the sync event when the burger menu was clicked', () => {
+    it('should emmit the sync event when the burger sidemenu was clicked', () => {
         const anchorTag = wrapper.find('.navbar-burger')
         anchorTag.trigger('click')
         const valueEmitted = wrapper.emitted()['update:active'][0]
@@ -30,7 +30,7 @@ describe('BNavbar', () => {
     it('should have the is-active class when we set the active prop manually', () => {
         const navBar = mount(BNavbar)
         navBar.setProps({ active: true })
-        const menuContainer = navBar.find('.navbar-menu')
+        const menuContainer = navBar.find('.navbar-sidemenu')
         expect(menuContainer.classes('is-active')).toBe(true)
     })
 
@@ -44,7 +44,7 @@ describe('BNavbar', () => {
         expect(navBar.find('.container').exists()).toBe(true)
     })
 
-    it('manage closing the menu as expected', () => {
+    it('manage closing the sidemenu as expected', () => {
         wrapper.vm.emitUpdateParentEvent = jest.fn()
 
         wrapper.setProps({

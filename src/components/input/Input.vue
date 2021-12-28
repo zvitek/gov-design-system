@@ -31,7 +31,7 @@
             @blur="onBlur"
             @focus="onFocus"/>
 
-        <b-icon
+        <gov-icon
             v-if="icon"
             class="is-left"
             :class="{'is-clickable': iconClickable}"
@@ -40,7 +40,7 @@
             :size="iconSize"
             @click.native="iconClick('icon-click', $event)"/>
 
-        <b-icon
+        <gov-icon
             v-if="!loading && hasIconRight"
             class="is-right"
             :class="{ 'is-clickable': passwordReveal || iconRightClickable }"
