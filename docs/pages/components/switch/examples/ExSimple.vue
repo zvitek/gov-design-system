@@ -1,26 +1,26 @@
 <template>
     <section>
-        <b-field>
+        <gov-field>
             <gov-switch>Default</gov-switch>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-switch v-model="isSwitched">
                 {{ isSwitched }}
             </gov-switch>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-switch v-model="isSwitchedCustom"
                 true-value="Yes"
                 false-value="No">
                 {{ isSwitchedCustom }}
             </gov-switch>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-switch disabled>Disabled</gov-switch>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-switch error>Error</gov-switch>
-        </b-field>
+        </gov-field>
     </section>
 </template>
 

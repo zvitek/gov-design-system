@@ -4,7 +4,7 @@ let config = {
     defaultIconComponent: null,
     defaultIconPrev: 'chevron-left',
     defaultIconNext: 'chevron-right',
-    defaultLocale: undefined,
+    defaultLocale: undefined, /* REMOVE */
     defaultDialogConfirmText: null,
     defaultDialogCancelText: null,
     defaultSnackbarDuration: 3500,
@@ -32,9 +32,9 @@ let config = {
     defaultDatepickerMobileNative: true,
     defaultTimepickerMobileNative: true,
     defaultNoticeQueue: false,
-    defaultInputHasCounter: true,
+    defaultInputHasCounter: true, /* REMOVE */
     defaultTaginputHasCounter: true,
-    defaultUseHtml5Validation: true,
+    defaultUseHtml5Validation: true, /* REMOVE */
     defaultDropdownMobileModal: true,
     defaultFieldLabelPosition: null,
     defaultDatepickerYearsRange: [-100, 10],

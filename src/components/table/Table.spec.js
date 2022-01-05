@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 import { useFakeTimers } from 'sinon'
-import BInput from '@components/input/Input'
+import GovInput from '@components/input/Input'
 import BTable from '@components/table/Table'
 import { setVueInstance } from '../../utils/config'
 
@@ -169,7 +169,7 @@ describe('BTable', () => {
             })
             headRows = wrapper.findAll('thead tr')
             bodyRows = wrapper.findAll('tbody tr')
-            searchInput = wrapper.find(BInput)
+            searchInput = wrapper.find(GovInput)
         })
 
         it('displays filter row when at least one column is searchable', () => {
@@ -180,7 +180,7 @@ describe('BTable', () => {
             const filterCells = headRows.at(1).findAll('.th-wrap')
 
             expect(filterCells.at(0).isEmpty()).toBe(true) // ID column is not searchable
-            expect(filterCells.at(1).contains(BInput)).toBe(true) // Name column is searchable
+            expect(filterCells.at(1).contains(GovInput)).toBe(true) // Name column is searchable
         })
 
         it('displays all data', () => {

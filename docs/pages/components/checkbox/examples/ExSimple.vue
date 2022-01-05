@@ -1,26 +1,26 @@
 <template>
     <section>
-        <b-field>
+        <gov-field>
             <gov-checkbox>Basic</gov-checkbox>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-checkbox v-model="checkbox">
                 {{ checkbox }}
             </gov-checkbox>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-checkbox v-model="checkboxCustom"
                 true-value="Yes"
                 false-value="No">
                 {{ checkboxCustom }}
             </gov-checkbox>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-checkbox disabled>Disabled</gov-checkbox>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-checkbox error>Error</gov-checkbox>
-        </b-field>
+        </gov-field>
     </section>
 </template>
 

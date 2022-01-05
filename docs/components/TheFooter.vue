@@ -11,7 +11,7 @@
                             </small>
                         </p>
 
-                        <b-field>
+                        <gov-field>
                             <p class="control">
                                 <a
                                     class="button gov-link--external-unset"
@@ -21,7 +21,7 @@
                                     <span>GitHub</span>
                                 </a>
                             </p>
-                        </b-field>
+                        </gov-field>
                         <small>
                             This site is powered by <a href="https://www.netlify.com">Netlify</a>
                         </small>

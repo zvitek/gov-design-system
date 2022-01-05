@@ -1,10 +1,10 @@
-import Input from './Input'
+import Field from './Field'
 
 import { use, registerComponent } from '../../utils/plugins'
 
 const Plugin = {
     install(Vue) {
-        registerComponent(Vue, Input)
+        registerComponent(Vue, Field)
     }
 }
 
@@ -13,5 +13,5 @@ use(Plugin)
 export default Plugin
 
 export {
-    Input as GovInput
+    Field as GovField
 }

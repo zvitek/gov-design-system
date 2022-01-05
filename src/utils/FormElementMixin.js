@@ -1,40 +1,47 @@
-import config from '../utils/config'
-import { isVueComponent } from './helpers'
+import { isVueComponent, makeid } from './helpers'
 
 export default {
     props: {
-        size: String,
-        expanded: Boolean,
-        loading: Boolean,
-        rounded: Boolean,
-        icon: String,
-        iconPack: String,
-        // Native options to use in HTML5 validation
-        autocomplete: String,
-        maxlength: [Number, String],
-        useHtml5Validation: {
-            type: Boolean,
-            default: () => config.defaultUseHtml5Validation
+        autocomplete: {
+            type: String,
+            required: false,
+            default: undefined
         },
-        validationMessage: String,
-        locale: {
-            type: [String, Array],
-            default: () => {
-                return config.defaultLocale
-            }
+        maxlength: {
+            type: [Number, String],
+            required: false,
+            default: undefined
         },
-        statusIcon: {
-            type: Boolean,
-            default: () => {
-                return config.defaultStatusIcon
-            }
+        validationMessage: {
+            type: String,
+            required: false,
+            default: null
+        },
+        customUniqueId: {
+            type: [String, Number],
+            required: false,
+            default: null
         }
     },
     data() {
         return {
-            isValid: true,
-            isFocused: false,
-            newIconPack: this.iconPack || config.defaultIconPack
+            uniqueId: null,
+            isFocused: false
+        }
+    },
+    mounted() {
+        this.uniqueId = this.customUniqueId || 'input_' + makeid()
+    },
+    watch: {
+        validationMessage: function (newValue) {
+            if ((Array.isArray(newValue) && newValue.length) || typeof newValue === 'string') {
+                this.setValidity(true, newValue)
+            } else {
+                this.setValidity(false, null)
+            }
+        },
+        uniqueId: function () {
+            this.swtUniqueId()
         }
     },
     computed: {
@@ -49,47 +56,6 @@ export default {
                 }
             }
             return parent
-        },
-
-        /**
-         * Get the type prop from parent if it's a Field.
-         */
-        statusType() {
-            const { newType } = this.parentField || {}
-
-            if (!newType) return
-
-            if (typeof newType === 'string') {
-                return newType
-            } else {
-                for (const key in newType) {
-                    if (newType[key]) {
-                        return key
-                    }
-                }
-            }
-        },
-
-        /**
-         * Get the message prop from parent if it's a Field.
-         */
-        statusMessage() {
-            if (!this.parentField) return
-
-            return this.parentField.newMessage || this.parentField.$slots.message
-        },
-
-        /**
-         * Fix icon size for inputs, large was too big
-         */
-        iconSize() {
-            switch (this.size) {
-                case 'is-small': return this.size
-                case 'is-medium': return
-                case 'is-large': return this.newIconPack === 'mdi'
-                    ? 'is-medium'
-                    : ''
-            }
         }
     },
     methods: {
@@ -108,13 +74,11 @@ export default {
         onBlur($event) {
             this.isFocused = false
             this.$emit('blur', $event)
-            this.checkHtml5Validity()
         },
 
         onFocus($event) {
             this.isFocused = true
             this.$emit('focus', $event)
-            this.checkHtml5Validity()
         },
 
         getElement() {
@@ -125,47 +89,29 @@ export default {
             return el
         },
 
-        setInvalid() {
-            let type = 'is-danger'
-            let message = this.validationMessage || this.getElement().validationMessage
-            this.setValidity(type, message)
-        },
-
-        setValidity(type, message) {
+        setValidity(status, message) {
             this.$nextTick(() => {
                 if (this.parentField) {
-                    // Set type only if not defined
-                    if (!this.parentField.type) {
-                        this.parentField.newType = type
-                    }
-                    // Set message only if not defined
-                    if (!this.parentField.message) {
-                        this.parentField.newMessage = message
-                    }
+                    this.parentField.error = status
+                    this.parentField.errorMessage = message
                 }
             })
         },
 
-        /**
-         * Check HTML5 validation, set isValid property.
-         * If validation fail, send 'is-danger' type,
-         * and error message to parent if it's a Field.
-         */
-        checkHtml5Validity() {
-            if (!this.useHtml5Validation) return
+        setNotEmpty(status) {
+            this.$nextTick(() => {
+                if (this.parentField) {
+                    this.parentField.notEmpty = status
+                }
+            })
+        },
 
-            const el = this.getElement()
-            if (el === undefined) return
-
-            if (!el.checkValidity()) {
-                this.setInvalid()
-                this.isValid = false
-            } else {
-                this.setValidity(null, null)
-                this.isValid = true
-            }
-
-            return this.isValid
+        swtUniqueId() {
+            this.$nextTick(() => {
+                if (this.parentField) {
+                    this.parentField.uniqueId = this.uniqueId
+                }
+            })
         }
     }
 }

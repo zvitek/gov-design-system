@@ -1,11 +1,11 @@
 <template>
     <section>
         <div class="block">
-            <b-field grouped group-multiline>
+            <gov-field grouped group-multiline>
                 <div class="control">
                     <gov-switch v-model="rounded"> Rounded </gov-switch>
                 </div>
-            </b-field>
+            </gov-field>
         </div>
 
         <b-image

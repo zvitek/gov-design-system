@@ -200,7 +200,7 @@
                                             :props="{ column, filters }"
                                         />
                                     </template>
-                                    <b-input
+                                    <gov-input
                                         v-else
                                         @[filtersEvent].native="onFiltersEvent"
                                         v-model="filters[column.field]"

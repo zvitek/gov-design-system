@@ -1,16 +1,16 @@
 <template>
     <section>
-        <b-field>
+        <gov-field>
             <gov-badge inversed>Tag inversed</gov-badge>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-badge warning>Tag warning</gov-badge>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-badge error>Tag error</gov-badge>
-        </b-field>
-        <b-field>
+        </gov-field>
+        <gov-field>
             <gov-badge>Tag default</gov-badge>
-        </b-field>
+        </gov-field>
     </section>
 </template>
