@@ -1,7 +1,5 @@
 <template>
-    <div
-        class="gov-form-control gov-form-control--custom"
-        :class="wrapperClass">
+    <div>
         <input
             class="gov-form-control__toggle"
             v-model="computedValue"
@@ -33,8 +31,11 @@
 </template>
 
 <script>
+import FormErrorMixin from '../../utils/FormErrorMixin'
+
 export default {
     name: 'GovSwitch',
+    mixins: [FormErrorMixin],
     props: {
         value: [String, Number, Boolean, Function, Object, Array, Date],
         nativeValue: [String, Number, Boolean, Function, Object, Array, Date],
@@ -58,7 +59,8 @@ export default {
     data() {
         return {
             newValue: this.value,
-            isMouseDown: false
+            isMouseDown: false,
+            _isSwitch: true
         }
     },
     computed: {
@@ -73,11 +75,6 @@ export default {
         },
         showControlLabel() {
             return !!this.$slots.default
-        },
-        wrapperClass() {
-            return {
-                'gov-form-control--error': this.error
-            }
         }
     },
     watch: {

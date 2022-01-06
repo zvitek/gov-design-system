@@ -1,6 +1,8 @@
 import { isVueComponent, makeid } from './helpers'
+import FormErrorMixin from './FormErrorMixin'
 
 export default {
+    mixins: [FormErrorMixin],
     props: {
         autocomplete: {
             type: String,
@@ -11,11 +13,6 @@ export default {
             type: [Number, String],
             required: false,
             default: undefined
-        },
-        validationMessage: {
-            type: String,
-            required: false,
-            default: null
         },
         customUniqueId: {
             type: [String, Number],
@@ -31,13 +28,8 @@ export default {
     },
     mounted() {
         this.uniqueId = this.customUniqueId || 'input_' + makeid()
-
-        this.$nextTick(() => this.prepareValidity())
     },
     watch: {
-        validationMessage: function () {
-            this.prepareValidity()
-        },
         uniqueId: function () {
             this.swtUniqueId()
         }
@@ -85,23 +77,6 @@ export default {
                 el = el.$refs[el.$data._elementRef]
             }
             return el
-        },
-
-        prepareValidity() {
-            const msg = this.validationMessage
-            if ((Array.isArray(msg) && msg.length) || typeof msg === 'string') {
-                this.setValidity(msg)
-            } else {
-                this.setValidity(null)
-            }
-        },
-
-        setValidity(message) {
-            this.$nextTick(() => {
-                if (this.parentField) {
-                    this.parentField.errorMessage = message
-                }
-            })
         },
 
         setNotEmpty(status) {

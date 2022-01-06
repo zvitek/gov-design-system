@@ -19,7 +19,7 @@
             <gov-switch disabled>Disabled</gov-switch>
         </gov-field>
         <gov-field>
-            <gov-switch error>Error</gov-switch>
+            <gov-switch validation-message="With error">Error</gov-switch>
         </gov-field>
     </section>
 </template>

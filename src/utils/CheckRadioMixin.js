@@ -1,4 +1,7 @@
+import FormErrorMixin from './FormErrorMixin'
+
 export default {
+    mixins: [FormErrorMixin],
     props: {
         value: [String, Number, Boolean, Function, Object, Array],
         nativeValue: [String, Number, Boolean, Function, Object, Array],
@@ -7,12 +10,7 @@ export default {
         required: Boolean,
         error: Boolean,
         name: String,
-        size: String,
-        validationMessage: {
-            type: String,
-            required: false,
-            default: null
-        }
+        size: String
     },
     data() {
         return {
@@ -53,13 +51,7 @@ export default {
         */
         value(value) {
             this.newValue = value
-        },
-        validationMessage: function () {
-            this.prepareValidity()
         }
-    },
-    mounted() {
-        this.$nextTick(() => this.prepareValidity())
     },
     methods: {
         focus() {
@@ -78,23 +70,6 @@ export default {
                 this.newValue = this.trueValue
             }
             this.computedValue = this.newValue
-        },
-
-        prepareValidity() {
-            const msg = this.validationMessage
-            if ((Array.isArray(msg) && msg.length) || typeof msg === 'string') {
-                this.setValidity(msg)
-            } else {
-                this.setValidity(null)
-            }
-        },
-
-        setValidity(message) {
-            this.$nextTick(() => {
-                if (this.parentField) {
-                    this.parentField.errorMessage = message
-                }
-            })
         }
     }
 }
