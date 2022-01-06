@@ -19,7 +19,7 @@
             <gov-checkbox disabled>Disabled</gov-checkbox>
         </gov-field>
         <gov-field>
-            <gov-checkbox error>Error</gov-checkbox>
+            <gov-checkbox validation-message="This is error">Error</gov-checkbox>
         </gov-field>
     </section>
 </template>

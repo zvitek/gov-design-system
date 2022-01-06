@@ -3,6 +3,7 @@
         class="gov-form-control"
         :class="{
             'gov-form-control--error': error || errorMessage,
+            'gov-form-control--custom': checkbox,
             'not-empty': notEmpty}">
         <div :class="{'gov-select': select}">
             <slot/>
@@ -54,6 +55,7 @@ export default {
             notEmpty: false,
             uniqueId: null,
             select: false,
+            checkbox: false,
             _isField: true // Used internally by Input and Select
         }
     },
@@ -116,8 +118,12 @@ export default {
     },
     mounted() {
         const isSelect = this.$children.filter((children) => children.$data._isSelect)
+        const isCheckbox = this.$children.filter((children) => children.$data._isCheckbox)
         if (isSelect.length) {
             this.select = true
+        }
+        if (isCheckbox.length) {
+            this.checkbox = true
         }
     }
 }

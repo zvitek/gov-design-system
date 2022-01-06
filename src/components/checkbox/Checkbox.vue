@@ -1,7 +1,5 @@
 <template>
-    <div
-        class="gov-form-control gov-form-control--custom"
-        :class="wrapperClass">
+    <div>
         <input
             class="gov-form-control__checkbox"
             v-model="computedValue"
@@ -51,6 +49,11 @@ export default {
         autocomplete: {
             type: String,
             default: 'on'
+        }
+    },
+    data() {
+        return {
+            _isCheckbox: true
         }
     }
 }

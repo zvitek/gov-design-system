@@ -7,7 +7,12 @@ export default {
         required: Boolean,
         error: Boolean,
         name: String,
-        size: String
+        size: String,
+        validationMessage: {
+            type: String,
+            required: false,
+            default: null
+        }
     },
     data() {
         return {
@@ -28,6 +33,18 @@ export default {
             return {
                 'gov-form-control--error': this.error
             }
+        },
+        /**
+         * Find parent Field, max 3 levels deep.
+         */
+        parentField() {
+            let parent = this.$parent
+            for (let i = 0; i < 3; i++) {
+                if (parent && !parent.$data._isField) {
+                    parent = parent.$parent
+                }
+            }
+            return parent
         }
     },
     watch: {
@@ -36,7 +53,13 @@ export default {
         */
         value(value) {
             this.newValue = value
+        },
+        validationMessage: function () {
+            this.prepareValidity()
         }
+    },
+    mounted() {
+        this.$nextTick(() => this.prepareValidity())
     },
     methods: {
         focus() {
@@ -47,6 +70,7 @@ export default {
             this.$refs.input.focus()
             this.change()
         },
+
         change() {
             if (this.$refs.input.checked) {
                 this.newValue = this.falseValue
@@ -54,6 +78,23 @@ export default {
                 this.newValue = this.trueValue
             }
             this.computedValue = this.newValue
+        },
+
+        prepareValidity() {
+            const msg = this.validationMessage
+            if ((Array.isArray(msg) && msg.length) || typeof msg === 'string') {
+                this.setValidity(msg)
+            } else {
+                this.setValidity(null)
+            }
+        },
+
+        setValidity(message) {
+            this.$nextTick(() => {
+                if (this.parentField) {
+                    this.parentField.errorMessage = message
+                }
+            })
         }
     }
 }
