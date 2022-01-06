@@ -69,12 +69,16 @@ export default {
     },
     methods: {
         calculateNotEmpty() {
-            console.log(this.selected)
             this.setNotEmpty(this.isFocused || (this.selected))
         }
     },
     mounted() {
         this.calculateNotEmpty()
+
+        const option = this.$refs.select.querySelector('option:first-of-type')
+        if (option && String(option.textContent).length) {
+            this.setNotEmpty(true)
+        }
     }
 }
 </script>

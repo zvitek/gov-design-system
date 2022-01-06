@@ -31,14 +31,12 @@ export default {
     },
     mounted() {
         this.uniqueId = this.customUniqueId || 'input_' + makeid()
+
+        this.$nextTick(() => this.prepareValidity())
     },
     watch: {
-        validationMessage: function (newValue) {
-            if ((Array.isArray(newValue) && newValue.length) || typeof newValue === 'string') {
-                this.setValidity(true, newValue)
-            } else {
-                this.setValidity(false, null)
-            }
+        validationMessage: function () {
+            this.prepareValidity()
         },
         uniqueId: function () {
             this.swtUniqueId()
@@ -89,10 +87,18 @@ export default {
             return el
         },
 
-        setValidity(status, message) {
+        prepareValidity() {
+            const msg = this.validationMessage
+            if ((Array.isArray(msg) && msg.length) || typeof msg === 'string') {
+                this.setValidity(msg)
+            } else {
+                this.setValidity(null)
+            }
+        },
+
+        setValidity(message) {
             this.$nextTick(() => {
                 if (this.parentField) {
-                    this.parentField.error = status
                     this.parentField.errorMessage = message
                 }
             })

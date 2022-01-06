@@ -2,7 +2,7 @@
     <div
         class="gov-form-control"
         :class="{
-            'gov-form-control--error': error,
+            'gov-form-control--error': error || errorMessage,
             'not-empty': notEmpty}">
         <div :class="{'gov-select': select}">
             <slot/>
@@ -94,7 +94,7 @@ export default {
             return messages.filter((m) => { if (m) return m })
         },
         hasMessage() {
-            return this.newMessage || this.$slots.message
+            return this.newMessage || this.$slots.message || this.errorMessage
         },
         hasLabel() {
             return this.newLabel || this.$slots.label

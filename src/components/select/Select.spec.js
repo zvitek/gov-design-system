@@ -14,6 +14,11 @@ describe('GovSelect', () => {
     })
 
     it('render correctly', () => {
+        const wrapper = shallowMount(GovSelect, {
+            propsData: {
+                customUniqueId: 'select_abc'
+            }
+        })
         expect(wrapper.html()).toMatchSnapshot()
     })
 

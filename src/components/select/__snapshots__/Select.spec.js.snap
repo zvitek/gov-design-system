@@ -1,7 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`GovSelect render correctly 1`] = `
-<div class="control"><span class="select is-empty"><select><!----> </select></span>
-    <!---->
-</div>
+<select id="select_abc">
+    <!----> </select>
 `;
