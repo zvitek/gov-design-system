@@ -124,7 +124,7 @@
 ### Fixes
 
 * Fix #2678: tab navigation with ``boxed`` navbar dropdown (thanks @yuwu9145)
-* Fix #2848: incorrect inset shadow for ``b-radio-button`` (thanks @service-paradis)
+* Fix #2848: incorrect inset shadow for ``gov-radio-button`` (thanks @service-paradis)
 * Fix #2879: open DatetimePicker using the enter key (thanks @service-paradis)
 * Fix #2990: table sorting on multiple column (thanks @yuwu9145)
 * Fix #2994: table striped style with sticky columns (thanks @service-paradis)

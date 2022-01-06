@@ -345,14 +345,14 @@ describe('Visual Regression Testing', () => {
         })
 
         // Click through each bullet
-        cy.get('.b-radio:first').click()
+        cy.get('.gov-radio:first').click()
         // Screenshot affected components
         cy.eyesCheckWindow({
             sizeMode: 'selector',
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(1)
             .click()
         // Screenshot affected components
@@ -361,7 +361,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(2)
             .click()
         // Screenshot affected components
@@ -370,7 +370,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(3)
             .click()
         // Screenshot affected components
@@ -379,7 +379,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(4)
             .click()
         // Screenshot affected components
@@ -388,7 +388,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(5)
             .click()
         // Screenshot affected components
@@ -397,7 +397,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(6)
             .click()
         // Screenshot affected components
@@ -406,7 +406,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(7)
             .click()
         // Screenshot affected components
@@ -415,7 +415,7 @@ describe('Visual Regression Testing', () => {
             selector: '.column'
         })
         // Click through each bullet
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(8)
             .click()
         // Screenshot affected components
@@ -443,7 +443,7 @@ describe('Visual Regression Testing', () => {
         cy.eyesCheckWindow('Documentation field')
 
         // Click second radio button
-        cy.get('.b-radio')
+        cy.get('.gov-radio')
             .eq(1)
             .click()
         // Screenshot affected elements

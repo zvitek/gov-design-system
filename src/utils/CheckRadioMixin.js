@@ -1,20 +1,25 @@
 import FormErrorMixin from './FormErrorMixin'
+import {makeid} from './helpers'
 
 export default {
     mixins: [FormErrorMixin],
     props: {
         value: [String, Number, Boolean, Function, Object, Array],
         nativeValue: [String, Number, Boolean, Function, Object, Array],
-        type: String,
         disabled: Boolean,
         required: Boolean,
         error: Boolean,
         name: String,
-        size: String
+        customUniqueId: {
+            type: String,
+            required: false,
+            default: null
+        }
     },
     data() {
         return {
-            newValue: this.value
+            newValue: this.value,
+            uniqueId: null
         }
     },
     computed: {
@@ -51,7 +56,13 @@ export default {
         */
         value(value) {
             this.newValue = value
+        },
+        uniqueId: function () {
+            this.swtUniqueId()
         }
+    },
+    mounted() {
+        this.uniqueId = this.customUniqueId || 'radio_' + makeid()
     },
     methods: {
         focus() {
@@ -70,6 +81,14 @@ export default {
                 this.newValue = this.trueValue
             }
             this.computedValue = this.newValue
+        },
+
+        swtUniqueId() {
+            this.$nextTick(() => {
+                if (this.parentField) {
+                    this.parentField.uniqueId = this.uniqueId
+                }
+            })
         }
     }
 }

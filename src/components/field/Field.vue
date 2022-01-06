@@ -120,10 +120,11 @@ export default {
         const isSelect = this.$children.filter((children) => children.$data._isSelect)
         const isCheckbox = this.$children.filter((children) => children.$data._isCheckbox)
         const isSwitch = this.$children.filter((children) => children.$data._isSwitch)
+        const isCustom = this.$children.filter((children) => children.$data._isCustom)
         if (isSelect.length) {
             this.select = true
         }
-        if (isCheckbox.length || isSwitch.length) {
+        if (isCheckbox.length || isSwitch.length || isCustom.length) {
             this.custom = true
         }
     }
