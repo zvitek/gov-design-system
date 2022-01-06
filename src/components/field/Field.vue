@@ -4,25 +4,27 @@
         :class="{
             'gov-form-control--error': error,
             'not-empty': notEmpty}">
-        <slot/>
-        <label
-            class="gov-form-control__label"
-            v-if="hasLabel"
-            :for="uniqueId">
-            <slot v-if="$slots.label" name="label"/>
-            <template v-else>
-                {{ label }}
-            </template>
-        </label>
-        <span v-if="hasMessage" class="gov-form-control__message">
-            <slot v-if="$slots.message" name="message"/>
-            <template v-else>
-                <template v-for="(mess, i) in formattedMessage">
-                    {{ mess }}
-                    <br :key="i" v-if="(i + 1) < formattedMessage.length">
+        <div :class="{'gov-select': select}">
+            <slot/>
+            <label
+                class="gov-form-control__label"
+                v-if="hasLabel"
+                :for="uniqueId">
+                <slot v-if="$slots.label" name="label"/>
+                <template v-else>
+                    {{ label }}
                 </template>
-            </template>
-        </span>
+            </label>
+            <span v-if="hasMessage" class="gov-form-control__message">
+                <slot v-if="$slots.message" name="message"/>
+                <template v-else>
+                    <template v-for="(mess, i) in formattedMessage">
+                        {{ mess }}
+                        <br :key="i" v-if="(i + 1) < formattedMessage.length">
+                    </template>
+                </template>
+            </span>
+        </div>
     </div>
 </template>
 
@@ -51,6 +53,7 @@ export default {
             newLabel: this.label,
             notEmpty: false,
             uniqueId: null,
+            select: false,
             _isField: true // Used internally by Input and Select
         }
     },
@@ -109,6 +112,12 @@ export default {
         */
         label(value) {
             this.newLabel = value
+        }
+    },
+    mounted() {
+        const isSelect = this.$children.filter((children) => children.$data._isSelect)
+        if (isSelect.length) {
+            this.select = true
         }
     }
 }

@@ -13,5 +13,5 @@ use(Plugin)
 export default Plugin
 
 export {
-    Select as BSelect
+    Select as GovSelect
 }

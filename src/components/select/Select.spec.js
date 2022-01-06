@@ -1,15 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
-import BSelect from '@components/select/Select'
+import GovSelect from '@components/select/Select'
 
 let wrapper
 
-describe('BSelect', () => {
+describe('GovSelect', () => {
     beforeEach(() => {
-        wrapper = shallowMount(BSelect)
+        wrapper = shallowMount(GovSelect)
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('BSelect')
+        expect(wrapper.name()).toBe('GovSelect')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 

@@ -1,7 +1,7 @@
 <template>
     <div class="field table-mobile-sort">
         <div class="field has-addons">
-            <b-select
+            <gov-select
                 v-model="sortMultipleSelect"
                 expanded
                 v-if="sortMultiple">
@@ -20,8 +20,8 @@
                         </template>
                     </template>
                 </option>
-            </b-select>
-            <b-select
+            </gov-select>
+            <gov-select
                 v-model="mobileSort"
                 expanded
                 v-else>
@@ -42,7 +42,7 @@
                     :value="column">
                     {{ column.label }}
                 </option>
-            </b-select>
+            </gov-select>
             <div class="control">
                 <template
                     v-if="sortMultiple && sortMultipleData.length > 0" >

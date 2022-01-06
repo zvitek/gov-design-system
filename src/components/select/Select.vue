@@ -1,51 +1,33 @@
 <template>
-    <div
-        class="control"
-        :class="{ 'is-expanded': expanded, 'has-icons-left': icon }">
-        <span class="select" :class="spanClasses">
+    <select
+        v-model="computedValue"
+        ref="select"
+        :id="uniqueId"
+        :multiple="multiple"
+        v-bind="$attrs"
+        @blur="onBlur"
+        @focus="onFocus">
 
-            <select
-                v-model="computedValue"
-                ref="select"
-                :multiple="multiple"
-                :size="nativeSize"
-                v-bind="$attrs"
-                @blur="$emit('blur', $event) && checkHtml5Validity()"
-                @focus="$emit('focus', $event)">
+        <template v-if="placeholder">
+            <option
+                v-if="computedValue == null"
+                :value="null"
+                disabled
+                hidden>
+                {{ placeholder }}
+            </option>
+        </template>
 
-                <template v-if="placeholder">
-                    <option
-                        v-if="computedValue == null"
-                        :value="null"
-                        disabled
-                        hidden>
-                        {{ placeholder }}
-                    </option>
-                </template>
+        <slot/>
 
-                <slot/>
-
-            </select>
-        </span>
-
-        <gov-icon
-            v-if="icon"
-            class="is-left"
-            :icon="icon"
-            :pack="iconPack"
-            :size="iconSize"/>
-    </div>
+    </select>
 </template>
 
 <script>
-import Icon from '../icon/Icon'
 import FormElementMixin from '../../utils/FormElementMixin'
 
 export default {
-    name: 'BSelect',
-    components: {
-        [Icon.name]: Icon
-    },
+    name: 'GovSelect',
     mixins: [FormElementMixin],
     inheritAttrs: false,
     props: {
@@ -54,13 +36,13 @@ export default {
             default: null
         },
         placeholder: String,
-        multiple: Boolean,
-        nativeSize: [String, Number]
+        multiple: Boolean
     },
     data() {
         return {
             selected: this.value,
-            _elementRef: 'select'
+            _elementRef: 'select',
+            _isSelect: true
         }
     },
     computed: {
@@ -71,17 +53,8 @@ export default {
             set(value) {
                 this.selected = value
                 this.$emit('input', value)
-                !this.isValid && this.checkHtml5Validity()
+                this.calculateNotEmpty()
             }
-        },
-        spanClasses() {
-            return [this.size, this.statusType, {
-                'is-fullwidth': this.expanded,
-                'is-loading': this.loading,
-                'is-multiple': this.multiple,
-                'is-rounded': this.rounded,
-                'is-empty': this.selected === null
-            }]
         }
     },
     watch: {
@@ -92,8 +65,16 @@ export default {
         */
         value(value) {
             this.selected = value
-            !this.isValid && this.checkHtml5Validity()
         }
+    },
+    methods: {
+        calculateNotEmpty() {
+            console.log(this.selected)
+            this.setNotEmpty(this.isFocused || (this.selected))
+        }
+    },
+    mounted() {
+        this.calculateNotEmpty()
     }
 }
 </script>
