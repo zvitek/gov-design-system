@@ -10,12 +10,8 @@
                     title="Gov: lightweight UI components for Vue.js based on Bulma"
                     active-class="">
                     <img
-                        v-if="light"
-                        src="../assets/gowue-light.svg"
-                        alt="Gov">
-                    <img
-                        v-else
-                        src="../assets/gov.png"
+                        src="../assets/gov-white.svg"
+                        width="100"
                         alt="Gov">
                 </router-link>
 
