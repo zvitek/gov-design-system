@@ -3,7 +3,7 @@
 exports[`AccordionItem default render correctly 1`] = `
 <div><button id="" aria-expanded="true" class="gov-accordion__header is-expanded">
         <h3>
-
+            Acc Label
         </h3>
     </button>
     <div aria-labelledby="" tabindex="-1" class="gov-accordion__content is-expanded">

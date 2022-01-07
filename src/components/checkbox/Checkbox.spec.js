@@ -18,7 +18,7 @@ describe('GovCheckbox', () => {
     })
 
     it('has an input checkbox', () => {
-        expect(wrapper.contains('label input[type=checkbox]')).toBeTruthy()
+        expect(wrapper.contains('input[type=checkbox]')).toBeTruthy()
     })
 
     it('emit input event with value when value change', () => {

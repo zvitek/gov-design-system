@@ -23,11 +23,6 @@ describe('GovSwitch', () => {
         expect(wrapper.html()).toMatchSnapshot()
     })
 
-    it('renders input element by default', () => {
-        expect(wrapper.contains('input')).toBeTruthy()
-        expect(wrapper.classes()).toContain('gov-form-control')
-    })
-
     it('updates internal value when v-model is changed', () => {
         const newValue = 'switch value'
         wrapper.setProps({ value: newValue })
@@ -49,12 +44,5 @@ describe('GovSwitch', () => {
             expect(wrapper.vm.$refs.input.focus).toHaveBeenCalled()
             done()
         })
-    })
-
-    it('applies error prop properly', () => {
-        const error = true
-        wrapper.setProps({ error })
-        const switchElement = wrapper.find('.gov-form-control')
-        expect(switchElement.classes()).toContain('gov-form-control--error')
     })
 })

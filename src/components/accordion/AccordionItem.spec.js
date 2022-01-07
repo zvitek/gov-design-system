@@ -6,7 +6,12 @@ let wrapper
 describe('AccordionItem', () => {
     describe('default', () => {
         beforeEach(() => {
-            wrapper = shallowMount(AccordionItem)
+            wrapper = shallowMount(AccordionItem, {
+                propsData: {
+                    open: true,
+                    label: 'Acc Label'
+                }
+            })
         })
 
         it('is called', () => {
@@ -39,8 +44,6 @@ describe('AccordionItem', () => {
         })
 
         it('call toggle method', async () => {
-            console.log(111)
-            console.log(wrapper.find('div'))
             expect(wrapper.find('.gov-accordion__content').isVisible()).toBe(false)
             wrapper.vm.toggle()
             await wrapper.vm.$nextTick()

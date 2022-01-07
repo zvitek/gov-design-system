@@ -2,7 +2,9 @@
 
 exports[`GovField render correctly 1`] = `
 <div class="gov-form-control">
-    <!---->
-    <!---->
+    <div class="">
+        <!---->
+        <!---->
+    </div>
 </div>
 `;
