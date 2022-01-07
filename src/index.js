@@ -17,8 +17,6 @@ const Gov = {
         }
         // Config component
         registerComponentProgrammatic(Vue, 'config', ConfigComponent)
-
-        Vue.prototype.$gov.globalNoticeInterval = null
     }
 }
 
@@ -28,13 +26,6 @@ export default Gov
 
 // export all components as vue plugin
 export * from './components'
-// export programmatic component
-// export {DialogProgrammatic} from './components/dialog'
-// export {LoadingProgrammatic} from './components/loading'
-// export {ModalProgrammatic} from './components/modal'
-// export {NotificationProgrammatic} from './components/notification'
-// export {SnackbarProgrammatic} from './components/snackbar'
-// export {ToastProgrammatic} from './components/toast'
 export {default as ConfigProgrammatic} from './utils/ConfigComponent'
 // export helpers
 export * from './utils/helpers'
