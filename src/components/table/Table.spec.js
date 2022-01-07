@@ -1,19 +1,19 @@
 import Vue from 'vue'
 import { shallowMount } from '@vue/test-utils'
 import { useFakeTimers } from 'sinon'
-import GovInput from '@components/input/Input'
-import BTable from '@components/table/Table'
+import BInput from '@components/input/Input'
+import GovTable from '@components/table/Table'
 import { setVueInstance } from '../../utils/config'
 
-describe('BTable', () => {
+describe('GovTable', () => {
     setVueInstance(Vue)
 
     let wrapper
     beforeEach(() => {
-        wrapper = shallowMount(BTable)
+        wrapper = shallowMount(GovTable)
     })
 
-    let tableCols = shallowMount(BTable, {
+    let tableCols = shallowMount(GovTable, {
         propsData: {
             columns: [
                 { label: 'default', width: '100px' },
@@ -25,10 +25,10 @@ describe('BTable', () => {
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('BTable')
+        expect(wrapper.name()).toBe('GovTable')
         expect(wrapper.isVueInstance()).toBeTruthy()
 
-        expect(tableCols.name()).toBe('BTable')
+        expect(tableCols.name()).toBe('GovTable')
         expect(tableCols.isVueInstance()).toBeTruthy()
     })
 
@@ -91,7 +91,7 @@ describe('BTable', () => {
             { id: 5, name: 'Clarence' }
         ]
         beforeEach(() => {
-            wrapper = shallowMount(BTable, {
+            wrapper = shallowMount(GovTable, {
                 propsData: {
                     columns: [
                         { label: 'ID', field: 'id' },
@@ -158,7 +158,7 @@ describe('BTable', () => {
         let searchInput
 
         beforeEach(() => {
-            wrapper = shallowMount(BTable, {
+            wrapper = shallowMount(GovTable, {
                 propsData: {
                     columns: [
                         { label: 'ID', field: 'id', numeric: true },
@@ -169,7 +169,7 @@ describe('BTable', () => {
             })
             headRows = wrapper.findAll('thead tr')
             bodyRows = wrapper.findAll('tbody tr')
-            searchInput = wrapper.find(GovInput)
+            searchInput = wrapper.find(BInput)
         })
 
         it('displays filter row when at least one column is searchable', () => {
@@ -180,7 +180,7 @@ describe('BTable', () => {
             const filterCells = headRows.at(1).findAll('.th-wrap')
 
             expect(filterCells.at(0).isEmpty()).toBe(true) // ID column is not searchable
-            expect(filterCells.at(1).contains(GovInput)).toBe(true) // Name column is searchable
+            expect(filterCells.at(1).contains(BInput)).toBe(true) // Name column is searchable
         })
 
         it('displays all data', () => {

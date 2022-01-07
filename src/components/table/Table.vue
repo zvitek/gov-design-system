@@ -1,52 +1,15 @@
 <template>
-    <div class="b-table">
+    <div class="gov-table">
 
         <slot />
 
-        <b-table-mobile-sort
-            v-if="mobileCards && hasSortablenewColumns"
-            :current-sort-column="currentSortColumn"
-            :sort-multiple="sortMultiple"
-            :sort-multiple-data="sortMultipleDataComputed"
-            :is-asc="isAsc"
-            :columns="newColumns"
-            :placeholder="mobileSortPlaceholder"
-            :icon-pack="iconPack"
-            :sort-icon="sortIcon"
-            :sort-icon-size="sortIconSize"
-            @sort="(column, event) => sort(column, null, event)"
-            @removePriority="(column) => removeSortingPriority(column)"
-        />
-
-        <template
-            v-if="paginated && (paginationPosition === 'top' || paginationPosition === 'both')">
-            <slot name="pagination">
-                <b-table-pagination
-                    v-bind="$attrs"
-                    :per-page="perPage"
-                    :paginated="paginated"
-                    :rounded="paginationRounded"
-                    :icon-pack="iconPack"
-                    :total="newDataTotal"
-                    :current-page.sync="newCurrentPage"
-                    :aria-next-label="ariaNextLabel"
-                    :aria-previous-label="ariaPreviousLabel"
-                    :aria-page-label="ariaPageLabel"
-                    :aria-current-label="ariaCurrentLabel"
-                    @page-change="(event) => $emit('page-change', event)"
-                >
-                    <slot name="top-left"/>
-                </b-table-pagination>
-            </slot>
-        </template>
-
         <div
-            class="table-wrapper"
+            class="gov-table-cover"
             :class="tableWrapperClasses"
             :style="tableStyle"
         >
             <table
-                class="table"
+                class="gov-table gov-table--mobile-block"
                 :class="tableClasses"
                 :tabindex="!focusable ? false : 0"
                 @keydown.self.prevent.up="pressedArrow(-1)"
@@ -88,7 +51,7 @@
                                     'is-centered': column.centered
                             }">
                                 <template v-if="column.$scopedSlots && column.$scopedSlots.header">
-                                    <b-slot-component
+                                    <gov-slot-component
                                         :component="column"
                                         scoped
                                         name="header"
@@ -165,7 +128,7 @@
                                 <template
                                     v-if="column.$scopedSlots && column.$scopedSlots.subheading"
                                 >
-                                    <b-slot-component
+                                    <gov-slot-component
                                         :component="column"
                                         scoped
                                         name="subheading"
@@ -192,7 +155,7 @@
                                     <template
                                         v-if="column.$scopedSlots
                                         && column.$scopedSlots.searchable">
-                                        <b-slot-component
+                                        <gov-slot-component
                                             :component="column"
                                             :scoped="true"
                                             name="searchable"
@@ -200,7 +163,7 @@
                                             :props="{ column, filters }"
                                         />
                                     </template>
-                                    <gov-input
+                                    <b-input
                                         v-else
                                         @[filtersEvent].native="onFiltersEvent"
                                         v-model="filters[column.field]"
@@ -261,7 +224,7 @@
                             <template v-for="(column, colindex) in visibleColumns">
 
                                 <template v-if="column.$scopedSlots && column.$scopedSlots.default">
-                                    <b-slot-component
+                                    <gov-slot-component
                                         :key="column.newKey + ':' + index + ':' + colindex"
                                         :component="column"
                                         v-bind="column.tdAttrs(row, column)"
@@ -335,39 +298,7 @@
                     </tr>
                 </tfoot>
             </table>
-
-            <template v-if="loading">
-                <slot name="loading">
-                    <b-loading :is-full-page="false" :active.sync="loading" />
-                </slot>
-            </template>
-
         </div>
-
-        <template
-            v-if="(checkable && hasBottomLeftSlot()) ||
-            (paginated && (paginationPosition === 'bottom' || paginationPosition === 'both'))"
-        >
-            <slot name="pagination">
-                <b-table-pagination
-                    v-bind="$attrs"
-                    :per-page="perPage"
-                    :paginated="paginated"
-                    :rounded="paginationRounded"
-                    :icon-pack="iconPack"
-                    :total="newDataTotal"
-                    :current-page.sync="newCurrentPage"
-                    :aria-next-label="ariaNextLabel"
-                    :aria-previous-label="ariaPreviousLabel"
-                    :aria-page-label="ariaPageLabel"
-                    :aria-current-label="ariaCurrentLabel"
-                    @page-change="(event) => $emit('page-change', event)"
-                >
-                    <slot name="bottom-left"/>
-                </b-table-pagination>
-            </slot>
-        </template>
-
     </div>
 </template>
 
@@ -378,23 +309,17 @@ import { VueInstance } from '../../utils/config'
 import Checkbox from '../checkbox/Checkbox'
 import Icon from '../icon/Icon'
 import Input from '../input/Input'
-import Loading from '../loading/Loading'
 import SlotComponent from '../../utils/SlotComponent'
-import TableMobileSort from './TableMobileSort'
 import TableColumn from './TableColumn'
-import TablePagination from './TablePagination'
 
 export default {
-    name: 'BTable',
+    name: 'GovTable',
     components: {
         [Checkbox.name]: Checkbox,
         [Icon.name]: Icon,
         [Input.name]: Input,
-        [Loading.name]: Loading,
         [SlotComponent.name]: SlotComponent,
-        [TableMobileSort.name]: TableMobileSort,
-        [TableColumn.name]: TableColumn,
-        [TablePagination.name]: TablePagination
+        [TableColumn.name]: TableColumn
     },
     inheritAttrs: false,
     provide() {

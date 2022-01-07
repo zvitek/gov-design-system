@@ -2,7 +2,7 @@
 import { toCssWidth } from '../../utils/helpers'
 
 export default {
-    name: 'BTableColumn',
+    name: 'GovTableColumn',
     inject: {
         $table: { name: '$table', default: false }
     },

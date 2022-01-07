@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BTable render correctly 1`] = `
-<div class="b-table">
+exports[`GovTable render correctly 1`] = `
+<div class="gov-table">
     <!---->
     <!---->
     <div class="table-wrapper has-mobile-cards">

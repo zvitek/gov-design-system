@@ -7,7 +7,7 @@
         <p>You can use these variables to customize this component.</p>
 
         <template>
-            <b-table
+            <gov-table
                 :mobile-cards="false"
                 :data="data"
                 :columns="variablesColumns"

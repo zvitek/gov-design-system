@@ -1,7 +1,7 @@
 import { isVueComponent } from './helpers'
 
 export default {
-    name: 'BSlotComponent',
+    name: 'GovSlotComponent',
     props: {
         component: {
             type: Object,

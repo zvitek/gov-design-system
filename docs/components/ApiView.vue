@@ -14,7 +14,7 @@
                 </h3>
                 <gov-tabs>
                     <gov-tab-item v-if="component.props" label="Properties">
-                        <b-table
+                        <gov-table
                             :mobile-cards="false"
                             :data="component.props"
                             :columns="propsColumns"
@@ -22,7 +22,7 @@
                     </gov-tab-item>
 
                     <gov-tab-item v-if="component.slots" label="Slots">
-                        <b-table
+                        <gov-table
                             :mobile-cards="false"
                             :data="component.slots"
                             :columns="slotsColumns"
@@ -30,7 +30,7 @@
                     </gov-tab-item>
 
                     <gov-tab-item v-if="component.events" label="Events">
-                        <b-table
+                        <gov-table
                             :mobile-cards="false"
                             :data="component.events"
                             :columns="eventsColumns"
@@ -38,7 +38,7 @@
                     </gov-tab-item>
 
                     <gov-tab-item v-if="component.methods" label="Methods">
-                        <b-table
+                        <gov-table
                             :mobile-cards="false"
                             :data="component.methods"
                             :columns="methodsColumns"

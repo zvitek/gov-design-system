@@ -20,13 +20,13 @@
             return {
                 api,
                 usageBundle: `
-                Vue.use(Gov, {
+                Vue.use(Buefy, {
                     defaultIconPack: 'fas',
                     defaultContainerElement: '#content',
                     // ...
                 })`,
                 usageComponents: `
-                import { ConfigProgrammatic, Table, Input } from 'gov'
+                import { ConfigProgrammatic, Table, Input } from 'buefy'
 
                 Vue.use(Table)
                 Vue.use(Input)

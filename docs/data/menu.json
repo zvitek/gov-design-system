@@ -4,7 +4,6 @@
             "category": "Installation",
             "pages": [
                 "documentation/start",
-                "documentation/customization",
                 "documentation/constructor-options"
             ]
         },
@@ -15,66 +14,14 @@
                 "documentation/badge",
                 "documentation/breadcrumb",
                 "documentation/button",
-                "documentation/autocomplete",
                 "documentation/checkbox",
-                "documentation/clockpicker",
-                "documentation/datepicker",
-                "documentation/datetimepicker",
-                "documentation/field",
                 "documentation/input",
-                "documentation/numberinput",
                 "documentation/radio",
-                "documentation/rate",
                 "documentation/select",
-                "documentation/slider",
                 "documentation/switch",
-                "documentation/taginput",
-                "documentation/timepicker",
-                "documentation/upload",
                 "documentation/icon",
-                "documentation/image",
-                "documentation/loading",
-                "documentation/message",
-                "documentation/modal",
-                "documentation/navbar",
-                "documentation/notification",
-                "documentation/pagination",
-                "documentation/progress",
-                "documentation/skeleton",
-                "documentation/sidebar",
                 "documentation/sidemenu",
-                "documentation/snackbar",
-                "documentation/steps",
-                "documentation/table",
-                "documentation/tabs",
-                "documentation/toast",
-                "documentation/tooltip"
-            ]
-        }
-    ],
-    "extensions": [
-        {
-            "category": "Input format",
-            "pages": [
-                "extensions/cleavejs"
-            ]
-        },
-        {
-            "category": "Validation",
-            "pages": [
-                "extensions/veevalidate"
-            ]
-        },
-        {
-            "category": "Drag & drop",
-            "pages": [
-                "extensions/sortablejs"
-            ]
-        },
-        {
-            "category": "CSS Variables",
-            "pages": [
-                "extensions/bulmacssvars"
+                "documentation/tabs"
             ]
         }
     ]

@@ -15,16 +15,16 @@
 
         <Example :component="ExMdi" :code="ExMdiCode" title="Material Design Icons" vertical/>
 
-        <b-message type="is-info">
+        <p>
             Using <code>far</code> or <code>fad</code> while having FontAwesome free tier might have missing icons.
-        </b-message>
+        </p>
 
         <Example :component="ExFa" :code="ExFaCode" title="FontAwesome" vertical/>
 
-        <b-message type="is-info">
+        <p>
             You can set the <code>defaultIconComponent</code> constructor option to render icons with the
             <a href="https://www.npmjs.com/package/@fortawesome/vue-fontawesome" target="_blank">vue-fontawesome</a> component.
-        </b-message>
+        </p>
 
         <div class="example is-paddingless">
             <CodeView :code="usage | pre" lang="javascript" expanded/>

@@ -6,7 +6,7 @@
                     <div class="column">
                         <p>
                             <small>
-                                Gov's source code is licensed under
+                                Gowue source code is licensed under
                                 <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
                             </small>
                         </p>
@@ -39,18 +39,6 @@
                             to="/documentation"
                             class="navbar-item has-text-weight-semibold">
                             Documentation
-                        </router-link>
-
-                        <router-link
-                            to="/extensions"
-                            class="navbar-item has-text-weight-semibold">
-                            Extensions
-                        </router-link>
-
-                        <router-link
-                            to="/expo"
-                            class="navbar-item has-text-weight-semibold">
-                            Expo
                         </router-link>
                     </div>
                 </div>

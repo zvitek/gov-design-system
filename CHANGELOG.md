@@ -118,7 +118,7 @@
 * Accept Date as values for Select (thanks @service-paradis)
 * Display events on unselectable Datepicker cell (thanks @service-paradis)
 * Add ``aria-minus-label`` and ``aria-plus-label`` functions for ``b-numberinput`` (thanks @service-paradis)
-* Add ``th-attrs`` and ``td-attrs`` functions for ``b-table``
+* Add ``th-attrs`` and ``td-attrs`` functions for ``gov-table``
 * Improve a11y on tab component (thanks @service-paradis)
 
 ### Fixes
@@ -158,14 +158,14 @@
 * Shipped with Bulma 0.9.1
 * Add ``is-light`` variant to tooltip (thanks @service-paradis)
 * Add support for multiple progress bars (thanks @service-paradis)
-* Add ``cellclick`` event to b-table (thanks @dauriata)
+* Add ``cellclick`` event to gov-table (thanks @dauriata)
 * Add ``controls-alignment`` prop to Numberinput (thanks @jonagoldman)
 * Add ``left-label`` prop to switch component (thanks @kaangokdemir)
 * Add ``indicator`` prop to show Slider value inside thumb (thanks @re2005)
 * Add ``autoFocus`` prop to Modal (thanks @mateuswetah)
 * Add ``aria-close-label`` prop to Taginput (thanks @service-paradis)
 * Support ``locale`` in Slider (thanks @service-paradis)
-* Add ``sticky-checkbox`` option to b-table (thanks @Numenorian)
+* Add ``sticky-checkbox`` option to gov-table (thanks @Numenorian)
 * Add ``rounded`` prop to table pagination (thanks @nastiaKuzanastasia.kuznetsova)
 * Add ``tooltip-always`` prop for Slider component (thanks @kaangokdemir)
 * Add ``#header`` slot inside of b-message to place a custom header (thanks @m4st3rm4tz3)
@@ -278,31 +278,31 @@
 From
 
 ```html
-<b-table :data="myData">
+<gov-table :data="myData">
     <template slot-scope="props">
-        <b-table-column field="name" label="Name">
+        <gov-table-column field="name" label="Name">
             {{ props.row.name }}
-        </b-table-column>
-        <b-table-column field="age" numeric label="Age">
+        </gov-table-column>
+        <gov-table-column field="age" numeric label="Age">
             {{ props.row.age }}
-        </b-table-column>
+        </gov-table-column>
     </template>
-</b-table>
+</gov-table>
 ```
 
 To
 
 ```html
-<b-table :data="myData">
-    <b-table-column field="name" label="Name" v-slot="props">
+<gov-table :data="myData">
+    <gov-table-column field="name" label="Name" v-slot="props">
         {{ props.row.name }}
-    </b-table-column>
-    <b-table-column field="age" label="Age">
+    </gov-table-column>
+    <gov-table-column field="age" label="Age">
         <template v-slot:default="props">
             {{ props.row.age }}
         </template>
-    </b-table-column>
-</b-table>
+    </gov-table-column>
+</gov-table>
 ```
 
 * Add ``triggers`` prop and remove ``hoverable`` prop to dropdown
@@ -820,7 +820,7 @@ this.$gov.toast.open('Toasty!')
 * Fix #1550 improve the default behavior for clickable steps (thanks @service-paradis)
 * Fix #1586 focus issue to radio, checkbox and switch (thanks @yxngl)
 * Add ``v-on:$listeners`` to internal native select of select component
-* Remove ``span`` around default b-table-column slot (thanks @service-paradis)
+* Remove ``span`` around default gov-table-column slot (thanks @service-paradis)
 
 ### New features
 
@@ -1394,7 +1394,7 @@ Toast.open('Toasty!')
 * #115 Add ``row-class`` property to table to style row status, e.g.:
 
 ```html
-    <b-table :data="tableData" :row-class="row => row.amount < 10 && 'is-warning'">[...]</b-table>
+    <gov-table :data="tableData" :row-class="row => row.amount < 10 && 'is-warning'">[...]</gov-table>
 ```
 
 * #117 Fix table row loop missing ``key`` prop
@@ -1504,40 +1504,40 @@ this.$modal.open({
 **Breakable changes on it**, now requires a scoped slot to wrap the columns, and a slot inside the column. You have now full control over the content of cells:
 
 ```html
-<b-table :data="data">
+<gov-table :data="data">
     <template scope="props">
-        <b-table-column field="id" label="ID" sortable numeric>
+        <gov-table-column field="id" label="ID" sortable numeric>
             {{ props.row.id }}
-        </b-table-column>
+        </gov-table-column>
 
-        <b-table-column field="user.first_name" label="First Name" sortable>
+        <gov-table-column field="user.first_name" label="First Name" sortable>
             {{ props.row.user.first_name }}
-        </b-table-column>
+        </gov-table-column>
 
-        <b-table-column field="date" label="Date" sortable
+        <gov-table-column field="date" label="Date" sortable
             v-html="formatDate(props.row.date)">
-        </b-table-column>
+        </gov-table-column>
 
-        <b-table-column field="gender" label="Gender">
+        <gov-table-column field="gender" label="Gender">
             <gov-icon
                 pack="fa"
                 :icon="props.row.gender === 'Male' ? 'mars' : 'venus'">
             </gov-icon>
             {{ props.row.gender }}
-        </b-table-column>
+        </gov-table-column>
     </template>
-</b-table>
+</gov-table>
 ```
 * Prop ``selectable`` renamed to ``selected`` and expects an Object, if you have Vuejs v2.3+ you can use the ``.sync`` modifier to make it two-way binding:
 
 ```html
-<b-table :data="data" :selected.sync="selectedRow">
+<gov-table :data="data" :selected.sync="selectedRow">
 ```
 
 is the same as:
 
 ```html
-<b-table :data="data" :selected="selectedRow" @select="row => selectedRow = row">
+<gov-table :data="data" :selected="selectedRow" @select="row => selectedRow = row">
 ```
 
 * Table new prop ``checked-rows`` that expects an Array, if you have Vuejs v2.3+ you can use the ``.sync`` modifier to make it two-way binding

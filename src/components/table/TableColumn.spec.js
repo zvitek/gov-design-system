@@ -1,27 +1,27 @@
 import { mount } from '@vue/test-utils'
-import BTable from '@components/table/Table'
-import BTableColumn from '@components/table/TableColumn'
+import GovTable from '@components/table/Table'
+import GovTableColumn from '@components/table/TableColumn'
 
 let wrapper
 const WrapperComp = {
     template: `
-        <BTable>
-            <BTableColumn/>
-            <BTableColumn ref="testItem" />
-            <BTableColumn />
-        </BTable>`,
+        <GovTable>
+            <GovTableColumn/>
+            <GovTableColumn ref="testItem" />
+            <GovTableColumn />
+        </GovTable>`,
     components: {
-        BTable, BTableColumn
+        GovTable, GovTableColumn
     }
 }
 
-describe('BTableColumn', () => {
+describe('GovTableColumn', () => {
     beforeEach(() => {
         wrapper = mount(WrapperComp, { sync: false }).find({ ref: 'testItem' })
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('BTableColumn')
+        expect(wrapper.name()).toBe('GovTableColumn')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 })
