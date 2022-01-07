@@ -34,19 +34,6 @@
             "documentation/constructor-options"
         ]
     },
-    "documentation/layout": {
-        "title": "Layout & elements",
-        "subtitle": "Gov has the entire Bulma's core <b>built in</b>. You can use any feature from Bulma, plus all the components Gov offers",
-        "path": "/documentation/layout",
-        "githubPath": "pages/Layout.vue",
-        "menu": "documentation",
-        "breadcrumb": [
-            "/",
-            "documentation",
-            "documentation/layout"
-        ]
-    },
-
     "documentation": {
         "title": "Documentation",
         "subtitle": "Learn everything you need to start using Gowue",
@@ -77,6 +64,17 @@
             "/",
             "documentation",
             "documentation/accordion"
+        ]
+    },
+    "documentation/autocomplete": {
+        "title": "Autocomplete",
+        "subtitle": "Extended input that provide suggestions while the user types. Use with <strong>Field</strong> to access all functionalities",
+        "path": "/documentation/autocomplete",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/autocomplete"
         ]
     },
     "documentation/badge": {

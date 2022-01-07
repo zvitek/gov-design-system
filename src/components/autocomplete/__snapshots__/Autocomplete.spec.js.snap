@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovAutocomplete render correctly 1`] = `
+<div role="combobox" aria-haspopup="listbox" class="gov-autocomplete"><input type="text" autocomplete="off" aria-autocomplete="list" class="gov-form-control__input" id="autocomplete_abc">
+    <div>
+        <ul class="gov-autocomplete__results" style="display: none;">
+            <!---->
+            <!---->
+        </ul>
+    </div>
+</div>
+`;

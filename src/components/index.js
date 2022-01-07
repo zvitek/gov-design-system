@@ -3,6 +3,7 @@ import Breadcrumb from './breadcrumb'
 import Button from './button'
 import Checkbox from './checkbox'
 import Accordion from './accordion'
+import Autocomplete from './autocomplete'
 import Field from './field'
 import Icon from './icon'
 import Input from './input'
@@ -14,6 +15,7 @@ import Table from './table'
 import Radio from './radio'
 
 export {
+    Autocomplete,
     Badge,
     Breadcrumb,
     Button,

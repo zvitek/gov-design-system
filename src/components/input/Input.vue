@@ -13,7 +13,7 @@
         @input="onInput"
         @change="onChange"
         @blur="newOnBlur"
-        @focus="onFocus"/>
+        @focus="newOnFocus"/>
 </template>
 
 <script>
@@ -113,6 +113,11 @@ export default {
             this.calculateNotEmpty()
         },
 
+        newOnFocus(event) {
+            this.onFocus(event)
+            this.calculateNotEmpty()
+        },
+
         updateValue(value) {
             this.computedValue = value
         },
@@ -123,6 +128,14 @@ export default {
     },
     mounted() {
         this.calculateNotEmpty()
+
+        this.$nextTick(() => {
+            if (!this.autocomplete) return
+            this.$refs.input.addEventListener('blur', () => {
+                this.isFocused = false
+                this.computedValue = ''
+            })
+        })
     }
 }
 </script>

@@ -36,6 +36,7 @@ const router = new Router({
                 route('documentation/icon', 'components/icon/Icon'),
                 route('documentation/tabs', 'components/tabs/Tabs'),
                 route('documentation/accordion', 'components/accordion/Accordion'),
+                route('documentation/autocomplete', 'components/autocomplete/Autocomplete'),
                 route('documentation/badge', 'components/badge/Badge'),
                 route('documentation/field', 'components/field/Field'),
                 route('documentation/input', 'components/input/Input'),

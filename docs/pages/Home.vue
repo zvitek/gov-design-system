@@ -29,38 +29,6 @@
                 </div>
             </div>
         </div>
-
-        <section class="hero">
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column has-text-centered features">
-                            <gov-icon icon="github-circle" size="is-large"/>
-                            <p class="title is-4"><strong>Free</strong></p>
-                            <p class="subtitle">Open source on <strong><a href="https://github.com/gowue/gowue" target="_blank">GitHub</a></strong></p>
-                        </div>
-                        <div class="column has-text-centered features">
-                            <gov-icon icon="cellphone-link" size="is-large"/>
-                            <p class="title is-4"><strong>Responsive</strong></p>
-                            <p class="subtitle"><b>Every</b> component is responsive</p>
-                        </div>
-                        <div class="column has-text-centered features">
-                            <gov-icon icon="alert-decagram" size="is-large"/>
-                            <p class="title is-4"><strong>Modern</strong></p>
-                            <p class="subtitle">
-                                Built with <strong><a href="https://vuejs.org/" target="_blank">Vue.js</a></strong>
-                                and <strong><a href="https://designsystem.gov.cz/" target="_blank">gov.cz</a></strong>
-                            </p>
-                        </div>
-                        <div class="column has-text-centered features">
-                            <gov-icon pack="far" icon="paper-plane" size="is-large"/>
-                            <p class="title is-4"><strong>Lightweight</strong></p>
-                            <p class="subtitle">No other internal dependency</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <TheFooter/>
     </section>
 </template>

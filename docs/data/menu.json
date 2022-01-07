@@ -11,6 +11,7 @@
             "category": "UI components",
             "pages": [
                 "documentation/accordion",
+                "documentation/autocomplete",
                 "documentation/badge",
                 "documentation/breadcrumb",
                 "documentation/button",
