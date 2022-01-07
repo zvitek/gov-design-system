@@ -1,22 +1,33 @@
 <template>
     <section>
-        <gov-field message="ddd" error>
-            <ul class="gov-form-group">
-                <gov-radio v-model="radio"
-                           size="is-small"
-                           native-value="small">
-                    Small
-                </gov-radio>
-                <gov-radio v-model="radio"
-                           native-value="default">
-                    Default
-                </gov-radio>
-                <gov-radio v-model="radio"
-                           size="is-medium"
-                           native-value="medium">
-                    Medium
-                </gov-radio>
-            </ul>
+        <gov-field>
+            <gov-radio-container inline>
+                <template v-for="value in values">
+                    <gov-radio v-model="inline" :native-value="value">
+                        {{ value }}
+                    </gov-radio>
+                </template>
+            </gov-radio-container>
+        </gov-field>
+
+        <gov-field message="Which value do you want">
+            <gov-radio-container>
+                <template v-for="value in values">
+                    <gov-radio v-model="block" :native-value="value">
+                        {{ value }}
+                    </gov-radio>
+                </template>
+            </gov-radio-container>
+        </gov-field>
+
+        <gov-field>
+            <gov-radio-container validation-message="This field is required">
+                <template v-for="value in values">
+                    <gov-radio v-model="error" :native-value="value">
+                        {{ value }}
+                    </gov-radio>
+                </template>
+            </gov-radio-container>
         </gov-field>
     </section>
 </template>
@@ -25,7 +36,12 @@
 export default {
     data() {
         return {
-            radio: 'default'
+            inline: null,
+            error: null,
+            block: null,
+            values: [
+                'First value', 'Second value', 'Third value'
+            ]
         }
     }
 }
