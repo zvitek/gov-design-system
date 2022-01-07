@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovInput render correctly 1`] = `<input type="text" autocomplete="on" class="gov-form-control__input" id="input_abc">`;

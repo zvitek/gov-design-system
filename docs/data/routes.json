@@ -1,0 +1,204 @@
+{
+    "/": {
+        "title": "Gowue: lightweight UI components for Vue.js based on Design system gov.cz",
+        "subtitle": "Gowue is a lightweight library of responsive UI components for Vue.js based on Design system gov.cz.",
+        "breadTitle": "Home",
+        "path": "/"
+    },
+    "notfound": {
+        "title": "Page not found",
+        "subtitle": "Sorry, we couldn’t find the page you were looking for",
+        "path": "/notfound"
+    },
+    "documentation/customization": {
+        "title": "Customization",
+        "subtitle": "If you're familiar with <a href='http://sass-lang.com' target='_blank'>Sass</a> and want to <strong>customize</strong> Gov with your own theme, follow these steps",
+        "path": "/documentation/customization",
+        "githubPath": "pages/installation/Customization.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/customization"
+        ]
+    },
+    "documentation/constructor-options": {
+        "title": "Constructor options",
+        "subtitle": "These are global default options, which are set on Gowue initialization",
+        "path": "/documentation/constructor-options",
+        "githubPath": "pages/installation/ConstructorOptions.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/constructor-options"
+        ]
+    },
+    "documentation/layout": {
+        "title": "Layout & elements",
+        "subtitle": "Gov has the entire Bulma's core <b>built in</b>. You can use any feature from Bulma, plus all the components Gov offers",
+        "path": "/documentation/layout",
+        "githubPath": "pages/Layout.vue",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/layout"
+        ]
+    },
+
+    "documentation": {
+        "title": "Documentation",
+        "subtitle": "Learn everything you need to start using Gowue",
+        "path": "/documentation",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation"
+        ]
+    },
+    "documentation/start": {
+        "title": "Start",
+        "subtitle": "Ways to install and use Gowue",
+        "path": "/documentation/start",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/start"
+        ]
+    },
+    "documentation/accordion": {
+        "title": "Accordion",
+        "subtitle": "Accordion is a easy way to toggle what you want",
+        "path": "/documentation/accordion",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/accordion"
+        ]
+    },
+    "documentation/badge": {
+        "title": "Badge",
+        "subtitle": "Badge labels to insert anywhere",
+        "path": "/documentation/badge",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/badge"
+        ]
+    },
+    "documentation/icon": {
+        "title": "Icon",
+        "subtitle": "Icons take an important role of any application",
+        "path": "/documentation/icon",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/icon"
+        ]
+    },
+    "documentation/tabs": {
+        "title": "Tabs",
+        "subtitle": "Responsive horizontal navigation tabs, switch between contents with ease",
+        "path": "/documentation/tabs",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/tabs"
+        ],
+        "isUpdated": true
+    },
+    "documentation/input": {
+        "title": "Input",
+        "subtitle": "Get user Input. Use with <strong>Field</strong> to access all functionalities",
+        "path": "/documentation/input",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/input"
+        ]
+    },
+    "documentation/select": {
+        "title": "Select",
+        "subtitle": "Select an item in a dropdown list. Use with <strong>Field</strong> to access all functionalities",
+        "path": "/documentation/select",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/select"
+        ]
+    },
+    "documentation/checkbox": {
+        "title": "Checkbox",
+        "subtitle": "Select a single option",
+        "path": "/documentation/checkbox",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/checkbox"
+        ]
+    },
+    "documentation/radio": {
+        "title": "Radio",
+        "subtitle": "Select an option from a set",
+        "path": "/documentation/radio",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/radio"
+        ]
+    },
+    "documentation/switch": {
+        "title": "Switch",
+        "subtitle": "Switch between two opposing states",
+        "path": "/documentation/switch",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/switch"
+        ]
+    },
+    "documentation/breadcrumb": {
+        "title": "Breadcrumb",
+        "subtitle": "Breadcrumb component for flexible navigation through the pages of your website!",
+        "path": "/documentation/breadcrumb",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/breadcrumb"
+        ]
+    },
+    "documentation/button": {
+        "title": "Button",
+        "subtitle": "The classic button, in different colors, sizes, and states",
+        "path": "/documentation/button",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/button"
+        ]
+    },
+    "documentation/sidemenu": {
+        "title": "Side Menu",
+        "subtitle": "A simple vertical menu",
+        "path": "/documentation/sidemenu",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/sidemenu"
+        ]
+    }
+}

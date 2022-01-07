@@ -1,0 +1,28 @@
+{
+    "documentation": [
+        {
+            "category": "Installation",
+            "pages": [
+                "documentation/start",
+                "documentation/constructor-options"
+            ]
+        },
+        {
+            "category": "UI components",
+            "pages": [
+                "documentation/accordion",
+                "documentation/badge",
+                "documentation/breadcrumb",
+                "documentation/button",
+                "documentation/checkbox",
+                "documentation/input",
+                "documentation/radio",
+                "documentation/select",
+                "documentation/switch",
+                "documentation/icon",
+                "documentation/sidemenu",
+                "documentation/tabs"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+.home {
+    .hero.is-fullheight {
+        min-height: calc(100vh - #{$navbar-height});
+    }
+    .logo-rounded,
+    .subtitle,
+    .npm,
+    .buttons {
+        margin-bottom: 0.5rem;
+        justify-content: center;
+    }
+    .gov-button + .gov-button {
+        margin-left: 0.5rem;
+    }
+    .npm {
+        display: inline-flex;
+        font-size: 1.1em;
+        color: lighten($primary, 20%);
+        background: darken($primary, 20%);
+    }
+    iframe {
+        height: 30px;
+    }
+    .hero {
+        .container:not(:last-child) {
+            margin-bottom: 3em;
+        }
+    }
+}

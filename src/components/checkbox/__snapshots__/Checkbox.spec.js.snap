@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovCheckbox render correctly 1`] = `<div><input type="checkbox" autocomplete="on" true-value="true" class="gov-form-control__checkbox" value="false"> <label class="gov-form-control__label"></label> <span class="gov-form-control__indicator"></span></div>`;

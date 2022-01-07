@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GovBreadcrumbItem render correctly 1`] = `<span class="gov-breadcrumbs__item"><a class="gov-link gov-link--standalone"></a></span>`;
