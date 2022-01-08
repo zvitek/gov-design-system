@@ -128,12 +128,11 @@ export default {
     },
     mounted() {
         this.calculateNotEmpty()
-
         this.$nextTick(() => {
             if (!this.autocomplete) return
             this.$refs.input.addEventListener('blur', () => {
                 this.isFocused = false
-                this.computedValue = ''
+                this.calculateNotEmpty()
             })
         })
     }

@@ -5,7 +5,6 @@
             <gov-autocomplete
                 v-model="name"
                 :data="filteredDataArray"
-                clear-on-select
                 @select="option => selected = option">
                 <template #empty>No results found</template>
             </gov-autocomplete>

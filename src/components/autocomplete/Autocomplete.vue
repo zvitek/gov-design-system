@@ -18,7 +18,6 @@
             @keydown.native.up.prevent="keyArrows('up')"
             @keydown.native.down.prevent="keyArrows('down')"
         />
-
         <div
             :style="style"
             ref="dropdown">
@@ -269,6 +268,7 @@ export default {
                     const input = this.$refs.input
                     input.newValue = ''
                     input.$refs.input.value = ''
+                    input.$refs.input.focus()
                 } else {
                     this.newValue = this.getValue(this.selected)
                 }
