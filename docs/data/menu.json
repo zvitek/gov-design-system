@@ -20,6 +20,7 @@
                 "documentation/radio",
                 "documentation/select",
                 "documentation/switch",
+                "documentation/multiselect",
                 "documentation/icon",
                 "documentation/sidemenu",
                 "documentation/tabs"

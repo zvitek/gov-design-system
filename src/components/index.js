@@ -9,6 +9,7 @@ import Icon from './icon'
 import Input from './input'
 import Sidemenu from './sidemenu'
 import Select from './select'
+import Multiselect from './multiselect'
 import Switch from './switch'
 import Tabs from './tabs'
 import Table from './table'
@@ -26,6 +27,7 @@ export {
     Icon,
     Input,
     Select,
+    Multiselect,
     Switch,
     Tabs,
     Table,

@@ -27,13 +27,6 @@ describe('GovInput', () => {
         expect(wrapper.classes()).toContain('gov-form-control__input')
     })
 
-    it('render textarea element when type is textarea', () => {
-        wrapper.setProps({ textarea: true })
-        const target = wrapper.find('textarea')
-
-        expect(target.exists()).toBeTruthy()
-    })
-
     it('render field password when the type property is password', () => {
         const wrapper = shallowMount(GovInput, {
             propsData: {

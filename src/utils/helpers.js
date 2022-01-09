@@ -293,12 +293,24 @@ export function isWebpSupported() {
     }).catch(() => false)
 }
 
+/**
+ * @param {Object} vm
+ * @return {boolean}
+ */
 export function isCustomElement(vm) {
     return 'shadowRoot' in vm.$root.$options
 }
 
+/**
+ * @param {any} d
+ * @return {boolean}
+ */
 export const isDefined = (d) => d !== undefined
 
+/**
+ * @param {Number} length
+ * @return {String}
+ */
 export const makeid = (length = 6) => {
     let result = ''
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -308,4 +320,26 @@ export const makeid = (length = 6) => {
             charactersLength))
     }
     return result
+}
+
+/**
+ * @param {any} value
+ * @return {boolean}
+ */
+export const isSingleValue = (value) => {
+    return !!(typeof value === 'string' || typeof value === 'number')
+}
+
+/**
+ * @param {any} value
+ * @return {Array}
+ */
+export const returnAsArray = (value) => {
+    if (Array.isArray(value)) {
+        return value
+    }
+    if (isSingleValue(value)) {
+        return [value]
+    }
+    return []
 }

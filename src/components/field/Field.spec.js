@@ -55,7 +55,7 @@ describe('GovField', () => {
             expect(wrapper.find('.gov-form-control__message').html().split('<br>').length).toEqual(Object.keys(message).length)
         })
 
-        it(`given an array of string with an object as one of the elements as message, it grabs the
+        it(`given an array of strings with an object as one of the elements as message, it grabs the
         keys of the object and joins them with the messages with line breaks`, () => {
             const message = [
                 'Some string message 1',

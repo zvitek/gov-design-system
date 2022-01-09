@@ -33,7 +33,7 @@
         </gov-field>
 
         <gov-field label="Message">
-            <gov-input maxlength="200" textarea></gov-input>
+            <gov-textarea maxlength="200"></gov-textarea>
         </gov-field>
     </section>
 </template>

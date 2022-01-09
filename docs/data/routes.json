@@ -133,6 +133,17 @@
             "documentation/select"
         ]
     },
+    "documentation/multiselect": {
+        "title": "Multiselect",
+        "subtitle": "A simple tag input field that can have autocomplete functionality",
+        "path": "/documentation/multiselect",
+        "menu": "documentation",
+        "breadcrumb": [
+            "/",
+            "documentation",
+            "documentation/multiselect"
+        ]
+    },
     "documentation/checkbox": {
         "title": "Checkbox",
         "subtitle": "Select a single option",

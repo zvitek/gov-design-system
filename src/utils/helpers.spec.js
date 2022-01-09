@@ -1,4 +1,4 @@
-import { getValueByPath, indexOf, merge, escapeRegExpChars, removeElement } from './helpers'
+import { getValueByPath, indexOf, merge, escapeRegExpChars, removeElement, isSingleValue } from './helpers'
 
 describe('helpers', () => {
     describe('getValueByPath', () => {
@@ -141,6 +141,28 @@ describe('helpers', () => {
 
             removeElement(elm)
             expect(elm.parentNode.removeChild).toHaveBeenCalled()
+        })
+    })
+
+    describe('isSingleValue', () => {
+        it('does not accept the object', () => {
+            const a = { test: 1 }
+            expect(isSingleValue(a)).toEqual(false)
+        })
+
+        it('does not accept an array', () => {
+            const a = [ 'test' ]
+            expect(isSingleValue(a)).toEqual(false)
+        })
+
+        it('does accept the string', () => {
+            const a = 'test'
+            expect(isSingleValue(a)).toEqual(true)
+        })
+
+        it('does accept the number', () => {
+            const a = 1
+            expect(isSingleValue(a)).toEqual(true)
         })
     })
 })
