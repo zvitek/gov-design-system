@@ -28,6 +28,18 @@ export default {
             return this.autocomplete || config.defaultInputAutocomplete
         }
     },
+    watch: {
+        type: function () {
+            this.resolveNativeTypes()
+        }
+    },
+    methods: {
+        resolveNativeTypes() {
+            if (['date', 'time'].indexOf(this.type) !== -1) {
+                this.setNotEmpty(true)
+            }
+        }
+    },
     mounted() {
         this.$nextTick(() => {
             if (!this.autocomplete) return
@@ -36,6 +48,7 @@ export default {
                 this.calculateNotEmpty()
             })
         })
+        this.resolveNativeTypes()
     }
 }
 </script>
