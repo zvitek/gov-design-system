@@ -36,7 +36,8 @@ export default {
     methods: {
         resolveNativeTypes() {
             if (['date', 'time'].indexOf(this.type) !== -1) {
-                this.setNotEmpty(true)
+                this.enforceEmptyValue = true
+                this.calculateNotEmpty()
             }
         }
     },

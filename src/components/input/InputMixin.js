@@ -21,6 +21,7 @@ export default {
     data() {
         return {
             newValue: this.value,
+            enforceEmptyValue: false,
             _elementRef: 'input'
         }
     },
@@ -87,7 +88,7 @@ export default {
         },
 
         calculateNotEmpty() {
-            this.setNotEmpty(this.isFocused || (this.valueLength))
+            this.setNotEmpty(this.isFocused || (this.valueLength) || this.enforceEmptyValue)
         }
     },
     mounted() {
