@@ -1,6 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GovSelect render correctly 1`] = `
-<select id="select_abc">
-    <!----> </select>
+exports[`GovMultiselect render correctly 1`] = `
+<gov-field>
+    <gov-autocomplete data=""></gov-autocomplete>
+    <ul class="gov-multiselect__tags"></ul>
+</gov-field>
 `;

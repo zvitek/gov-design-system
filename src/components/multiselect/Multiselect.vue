@@ -61,6 +61,11 @@ export default {
             type: Boolean,
             required: false,
             default: true
+        },
+        customUniqueId: {
+            type: [String, Number],
+            required: false,
+            default: null
         }
     },
     data() {
@@ -132,6 +137,7 @@ export default {
             if (this.selectedState.hasOwnProperty(index)) {
                 this.selectedState.splice(index, 1)
             }
+            this.name = ''
         }
     }
 }

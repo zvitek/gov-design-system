@@ -1,16 +1,34 @@
 <template>
     <section>
-        {{ selected }}
-        <gov-multiselect label="Select the name" :multiselect="false" v-model="selected" :data="data" search-field="user.first_name" unique-field="id"/>
+        <pre>{{ selectedSingle }}</pre>
+        <gov-multiselect
+            label="Select the name"
+            :multiselect="false"
+            v-model="selectedSingle"
+            :data="dataSingle"/>
+
+        <pre>{{ selected }}</pre>
+        <gov-multiselect
+            label="Select the name"
+            v-model="selected"
+            :data="data"
+            clear-on-select
+            search-field="user.first_name"
+            unique-field="id"/>
     </section>
 </template>
 
 <script>
-    // const data = require('@/data/sample.json')
+    const data = require('@/data/sample.json')
 
     export default {
         data() {
-            return { data: ["karel", "pepa", "katka", "zdenda"], selected: "karel" }
+            return {
+                dataSingle: ["Jesse", "John", "Charles", "Melissa"],
+                selectedSingle: null,
+                selected: [],
+                data
+            }
         }
     }
 </script>

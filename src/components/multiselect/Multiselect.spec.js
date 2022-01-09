@@ -1,36 +1,38 @@
 import { shallowMount } from '@vue/test-utils'
-import GovSelect from '@components/select/Select'
+import GovMultiselect from '@components/Multiselect/Multiselect'
+import GovField from '@components/Field/Field'
+import GovAutocomplete from '@components/Autocomplete/Autocomplete'
 
 let wrapper
 
-describe('GovSelect', () => {
+describe('GovMultiselect', () => {
     beforeEach(() => {
-        wrapper = shallowMount(GovSelect)
+        wrapper = shallowMount(GovMultiselect, {
+            propsData: {
+                data: []
+            },
+            components: {
+                GovField, GovAutocomplete
+            }
+        })
     })
 
     it('is called', () => {
-        expect(wrapper.name()).toBe('GovSelect')
+        expect(wrapper.name()).toBe('GovMultiselect')
         expect(wrapper.isVueInstance()).toBeTruthy()
     })
 
     it('render correctly', () => {
-        const wrapper = shallowMount(GovSelect, {
+        const wrapper = shallowMount(GovMultiselect, {
             propsData: {
-                customUniqueId: 'select_abc'
+                data: [],
+                customUniqueId: 'Multiselect_abc'
             }
         })
         expect(wrapper.html()).toMatchSnapshot()
     })
 
-    it('has a select element', () => {
-        expect(wrapper.contains('select')).toBeTruthy()
-    })
-
-    it('emit input event with value when value change', () => {
-        wrapper.setProps({ value: true })
-        expect(wrapper.vm.computedValue).toBeTruthy()
-        wrapper.vm.computedValue = false
-        const valueEmitted = wrapper.emitted()['input'][0]
-        expect(valueEmitted).toContainEqual(false)
+    it('has a input element', () => {
+        expect(wrapper.find(GovAutocomplete)).toBeTruthy()
     })
 })
