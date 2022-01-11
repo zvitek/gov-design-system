@@ -1,7 +1,7 @@
 export default {
     props: {
         validationMessage: {
-            type: String,
+            type: [String, Array],
             required: false,
             default: null
         }

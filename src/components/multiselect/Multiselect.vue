@@ -4,6 +4,7 @@
             v-model="name"
             :data="filteredDataArray"
             :clear-on-select="clearOnSelect"
+            :open-on-focus="openOnFocus"
             :field="searchField"
             @select="option => selected = option">
             <template #empty>No results found</template>
@@ -53,6 +54,11 @@ export default {
             default: null
         },
         clearOnSelect: {
+            type: Boolean,
+            required: false,
+            default: true
+        },
+        openOnFocus: {
             type: Boolean,
             required: false,
             default: false
