@@ -5,6 +5,7 @@
             :data="filteredDataArray"
             :clear-on-select="clearOnSelect"
             :open-on-focus="openOnFocus"
+            :keep-open="keepOpen"
             :field="searchField"
             @select="option => selected = option">
             <template #empty>No results found</template>
@@ -67,6 +68,11 @@ export default {
             type: Boolean,
             required: false,
             default: true
+        },
+        keepOpen: {
+            type: Boolean,
+            required: false,
+            default: false
         },
         customUniqueId: {
             type: [String, Number],
