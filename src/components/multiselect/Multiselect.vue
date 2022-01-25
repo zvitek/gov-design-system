@@ -2,6 +2,7 @@
     <gov-field :label="label">
         <gov-autocomplete
             v-model="name"
+            :disabled="disabled"
             :data="filteredDataArray"
             :clear-on-select="clearOnSelect"
             :open-on-focus="openOnFocus"
@@ -28,7 +29,7 @@
 
 <script>
 import FormElementMixin from '../../utils/FormElementMixin'
-import {getValueByPath, isSingleValue, returnAsArray} from '../../utils/helpers'
+import { getValueByPath, isSingleValue, returnAsArray } from '../../utils/helpers'
 
 export default {
     name: 'GovMultiselect',
@@ -78,6 +79,11 @@ export default {
             type: [String, Number],
             required: false,
             default: null
+        },
+        disabled: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     data() {
