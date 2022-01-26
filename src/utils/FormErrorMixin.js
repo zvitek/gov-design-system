@@ -23,6 +23,15 @@ export default {
                 }
             }
             return parent
+        },
+        childField() {
+            let children = this.$children.filter((child) => {
+                return child.$data._isField
+            })
+            if (children.length) {
+                return children[0]
+            }
+            return null
         }
     },
     methods: {
@@ -37,8 +46,9 @@ export default {
 
         setValidity(message) {
             this.$nextTick(() => {
-                if (this.parentField) {
-                    this.parentField.errorMessage = message
+                const field = this.childField || this.parentField
+                if (field) {
+                    field.errorMessage = message
                 }
             })
         }

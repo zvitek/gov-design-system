@@ -11,7 +11,7 @@
             @select="option => selected = option">
             <template #empty>No results found</template>
         </gov-autocomplete>
-        <ul class="gov-multiselect__tags">
+        <ul class="gov-multiselect__tags" v-if="selectedState.length">
             <li
                 class="gov-multiselect__tag"
                 :key="index"
