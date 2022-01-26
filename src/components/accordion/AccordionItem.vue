@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { makeid } from '../../utils/helpers'
+
 export default {
     name: 'GovAccordionItem',
     model: {
@@ -41,7 +43,8 @@ export default {
         },
         ariaId: {
             type: String,
-            default: ''
+            required: false,
+            default: null
         },
         label: {
             type: String,
@@ -64,13 +67,16 @@ export default {
     },
     methods: {
         /**
-        * Toggle and emit events
-        */
+         * Toggle and emit events
+         */
         toggle() {
             this.isOpen = !this.isOpen
             this.$emit('update:open', this.isOpen)
             this.$emit(this.isOpen ? 'open' : 'close')
         }
+    },
+    mounted() {
+        this.ariaId = this.ariaId || 'accordion_' + makeid()
     }
 }
 </script>

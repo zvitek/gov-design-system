@@ -12,6 +12,7 @@
             :disabled="disabled"
             :required="required"
             :name="name"
+            :id="uniqueId"
             :value="nativeValue"
             :true-value="trueValue"
             :false-value="falseValue"
@@ -19,6 +20,7 @@
         <label
             class="gov-form-control__label"
             ref="label"
+            :for="uniqueId"
             :id="ariaLabelledby"
             :disabled="disabled"
             @click="focus"
