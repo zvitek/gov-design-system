@@ -2,7 +2,7 @@
     <div>
         <button
             class="gov-accordion__header"
-            :id="ariaId"
+            :id="uniqueId"
             :aria-expanded="isOpen"
             @click="toggle"
             :class="{
@@ -15,7 +15,7 @@
         </button>
         <div
             class="gov-accordion__content"
-            :aria-labelledby="ariaId"
+            :aria-labelledby="uniqueId"
             v-show="isOpen"
             tabindex="-1"
             :class="{
@@ -57,7 +57,8 @@ export default {
     },
     data() {
         return {
-            isOpen: this.open
+            isOpen: this.open,
+            uniqueId: null
         }
     },
     watch: {
@@ -76,7 +77,7 @@ export default {
         }
     },
     mounted() {
-        this.ariaId = this.ariaId || 'accordion_' + makeid()
+        this.uniqueId = this.ariaId || 'accordion_' + makeid()
     }
 }
 </script>
