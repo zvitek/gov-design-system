@@ -23,7 +23,6 @@
             :for="uniqueId"
             :id="ariaLabelledby"
             :disabled="disabled"
-            @click="focus"
             @keydown.prevent.enter="$refs.label.click()">
             <slot/>
         </label>
