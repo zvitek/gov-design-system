@@ -13,6 +13,10 @@ export default {
             type: Boolean,
             default: false
         },
+        whisperer: {
+            type: Boolean,
+            default: false
+        },
         customClass: {
             type: String,
             default: ''

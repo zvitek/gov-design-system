@@ -43,7 +43,7 @@ export default {
     },
     mounted() {
         this.$nextTick(() => {
-            if (!this.autocomplete) return
+            if (!this.whisperer) return
             this.$refs.input.addEventListener('blur', () => {
                 this.isFocused = false
                 this.calculateNotEmpty()
