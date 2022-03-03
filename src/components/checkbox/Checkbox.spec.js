@@ -5,7 +5,9 @@ let wrapper
 
 describe('GovCheckbox', () => {
     beforeEach(() => {
-        wrapper = shallowMount(GovCheckbox)
+        wrapper = shallowMount(GovCheckbox, {
+            props: {cus}
+        })
     })
 
     it('is called', () => {

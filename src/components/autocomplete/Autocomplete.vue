@@ -10,6 +10,7 @@
             :autocomplete="newAutocomplete"
             :aria-autocomplete="ariaAutocomplete"
             :custom-unique-id="customUniqueId"
+            :whisperer="true"
             v-bind="$attrs"
             @input="onInput"
             @focus="focused"

@@ -1,5 +1,5 @@
 <template>
-    <article class="content">
+    <div class="content">
         <p>
             Gov (pronounced /ˈbyo͞oˌfī/, like <b>beau-fy</b>) is a user interface component library made on top
             of <a href="https://vuejs.org" target="_blank">Vue.js</a> and <a href="https://bulma.io/">Bulma</a>;
@@ -26,5 +26,5 @@
             Now that you know what Gov is, get on to the next step and
             <router-link to="/documentation/start">install it</router-link>!
         </p>
-    </article>
+    </div>
 </template>

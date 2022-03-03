@@ -1,0 +1,10 @@
+$class: '.gov-footer';
+
+#{$class} {
+    &__lower {
+        a {
+            color: white;
+            font-size: .75rem;
+        }
+    }
+}

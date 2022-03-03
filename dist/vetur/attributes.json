@@ -1,0 +1,330 @@
+{
+  "b-accordion/open": {
+    "description": "Whether accordion is open or not, use the .sync modifier to make it two-way binding",
+    "type": "boolean"
+  },
+  "b-accordion/aria-id": {
+    "description": "Id for the container div. Should be used with aria-controls on trigger for better accessibility.",
+    "type": "string"
+  },
+  "b-autocomplete/value": {
+    "description": "Binding value",
+    "type": "string|number"
+  },
+  "b-autocomplete/data": {
+    "description": "Options / suggestions",
+    "type": "array<string>|array<number>, array<object>"
+  },
+  "b-autocomplete/field": {
+    "description": "Property of the object (if data is array of objects) to use as display text, and to keep track of selected option",
+    "type": "string"
+  },
+  "b-autocomplete/custom-formatter": {
+    "description": "Function to format an option to a string for display in the input as alternative to field prop)",
+    "type": "function"
+  },
+  "b-autocomplete/group-field": {
+    "description": "Property of the object (if data is array of objects) to use as display text of group",
+    "type": "string"
+  },
+  "b-autocomplete/group-options": {
+    "description": "Property of the object (if data is array of objects) to use as key to get items array of each group, optional",
+    "type": "string"
+  },
+  "b-autocomplete/clear-on-select": {
+    "description": "Clear input text on select",
+    "type": "boolean"
+  },
+  "b-autocomplete/open-on-focus": {
+    "description": "Open dropdown list on focus",
+    "type": "boolean"
+  },
+  "b-autocomplete/keep-first": {
+    "description": "The first option will always be pre-selected (easier to just hit enter or tab)",
+    "type": "boolean"
+  },
+  "b-autocomplete/confirm-keys": {
+    "description": "Array of keys (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values) which will select an option when typing (default tab and enter)",
+    "type": "array"
+  },
+  "b-autocomplete/clearable": {
+    "description": "Add a button to clear the inputed text",
+    "type": "boolean"
+  },
+  "b-autocomplete/maxlength": {
+    "description": "Same as native maxlength, plus character counter",
+    "type": "string|number"
+  },
+  "b-autocomplete/check-infinite-scroll": {
+    "description": "Makes the component check if list reached scroll end and emit infinite-scroll event.",
+    "type": "boolean"
+  },
+  "b-autocomplete/select-on-click-outside": {
+    "description": "Trigger the @select event for the first pre-selected option when clicking outside and keep-first is enabled",
+    "type": "boolean"
+  },
+  "b-autocomplete/Any native attribute": {
+    "description": "—",
+    "type": "—"
+  },
+  "b-badge/inversed": {
+    "description": "-",
+    "type": "boolean"
+  },
+  "b-badge/warning": {
+    "description": "-",
+    "type": "boolean"
+  },
+  "b-badge/error": {
+    "description": "-",
+    "type": "boolean"
+  },
+  "b-breadcrumb/tag": {
+    "description": "a, router-link and it's html attributes like href, to, etc...",
+    "type": "string"
+  },
+  "b-breadcrumb/active": {
+    "description": "is the current breadcrumb is actually the current page.",
+    "type": "boolean"
+  },
+  "b-button/type": {
+    "description": "Type (color) of the control, optional",
+    "type": "string"
+  },
+  "b-button/size": {
+    "description": "Vertical size of button, optional",
+    "type": "string"
+  },
+  "b-button/label": {
+    "description": "Button label, optional when default slot",
+    "type": "string"
+  },
+  "b-button/outlined": {
+    "description": "Outlined style",
+    "type": "boolean"
+  },
+  "b-button/primary": {
+    "description": "Primary style",
+    "type": "boolean"
+  },
+  "b-button/inversed": {
+    "description": "Inversed style",
+    "type": "boolean"
+  },
+  "b-button/Any native attribute": {
+    "description": "—",
+    "type": "—"
+  },
+  "b-checkbox/value": {
+    "description": "Binding value",
+    "type": "any"
+  },
+  "b-checkbox/native-value": {
+    "description": "Same as native value",
+    "type": "any"
+  },
+  "b-checkbox/true-value": {
+    "description": "Overrides the returned value when it's checked",
+    "type": "any"
+  },
+  "b-checkbox/false-value": {
+    "description": "Overrides the returned value when it's not checked",
+    "type": "any"
+  },
+  "b-checkbox/disabled": {
+    "description": "Same as native disabled",
+    "type": "boolean"
+  },
+  "b-checkbox/required": {
+    "description": "Same as native required",
+    "type": "boolean"
+  },
+  "b-checkbox/error": {
+    "description": "Error state",
+    "type": "boolean"
+  },
+  "b-checkbox/name": {
+    "description": "Same as native name",
+    "type": "string"
+  },
+  "b-checkbox/aria-labelledby": {
+    "description": "Accessibility label to establish relationship between the checkbox and control label",
+    "type": "string"
+  },
+  "b-icon/pack": {
+    "description": "Icon pack to use",
+    "type": "string"
+  },
+  "b-icon/icon": {
+    "description": "Icon name",
+    "type": "string"
+  },
+  "b-icon/gov": {
+    "description": "Gov icons",
+    "type": "bool"
+  },
+  "b-icon/gov-complex": {
+    "description": "Gov complex icons",
+    "type": "bool"
+  },
+  "b-icon/custom-size": {
+    "description": "Overrides icon font size, optional",
+    "type": "string"
+  },
+  "b-input/value": {
+    "description": "Binding value",
+    "type": "string|number"
+  },
+  "b-input/lazy": {
+    "description": "Makes the binding lazy. Note: v-model.lazy won't work",
+    "type": "boolean"
+  },
+  "b-input/textarea": {
+    "description": "-",
+    "type": "boolean"
+  },
+  "b-input/type": {
+    "description": "Input type, like native",
+    "type": "string"
+  },
+  "b-input/maxlength": {
+    "description": "Same as native maxlength, plus character counter",
+    "type": "string|number"
+  },
+  "b-input/custom-class": {
+    "description": "CSS classes to be applied on input",
+    "type": "string"
+  },
+  "b-input/validation-message": {
+    "description": "The message which is shown when a validation error occurs",
+    "type": "string"
+  },
+  "b-input/Any native attribute": {
+    "description": "—",
+    "type": "—"
+  },
+  "b-multiselect/value": {
+    "description": "Binding value",
+    "type": "any"
+  },
+  "b-multiselect/placeholder": {
+    "description": "Text when nothing is selected",
+    "type": "string"
+  },
+  "b-multiselect/Any native attribute": {
+    "description": "—",
+    "type": "—"
+  },
+  "b-radio/value": {
+    "description": "Binding value",
+    "type": "any"
+  },
+  "b-radio/native-value": {
+    "description": "Same as native value",
+    "type": "any"
+  },
+  "b-radio/disabled": {
+    "description": "Same as native disabled",
+    "type": "boolean"
+  },
+  "b-radio/required": {
+    "description": "Same as native required",
+    "type": "boolean"
+  },
+  "b-radio/name": {
+    "description": "Same as native name",
+    "type": "string"
+  },
+  "b-select/value": {
+    "description": "Binding value",
+    "type": "any"
+  },
+  "b-select/placeholder": {
+    "description": "Text when nothing is selected",
+    "type": "string"
+  },
+  "b-select/Any native attribute": {
+    "description": "—",
+    "type": "—"
+  },
+  "b-sidemenu/complex": {
+    "description": "-",
+    "type": "boolean"
+  },
+  "b-sidemenu-item/label": {
+    "description": "Menu item label",
+    "type": "string"
+  },
+  "b-sidemenu-item/active": {
+    "description": "Item is active, use the .sync modifier to make it two-way binding",
+    "type": "boolean"
+  },
+  "b-sidemenu-item/tag": {
+    "description": "Button tag name",
+    "type": "string"
+  },
+  "b-sidemenu-item/aria-role": {
+    "description": "Role attribute to be passed to list item for better accessibility. Use menuitem only in situations where your sidemenu item is really related to navigation.",
+    "type": "string"
+  },
+  "b-sidemenu-item/Any native attribute": {
+    "description": "—",
+    "type": "—"
+  },
+  "b-switch/value": {
+    "description": "Binding value",
+    "type": "any"
+  },
+  "b-switch/native-value": {
+    "description": "Same as native value",
+    "type": "any"
+  },
+  "b-switch/true-value": {
+    "description": "Overrides the returned value when it's checked",
+    "type": "any"
+  },
+  "b-switch/false-value": {
+    "description": "Overrides the returned value when it's not checked",
+    "type": "any"
+  },
+  "b-switch/disabled": {
+    "description": "Same as native disabled",
+    "type": "boolean"
+  },
+  "b-switch/error": {
+    "description": "Error state",
+    "type": "boolean"
+  },
+  "b-switch/name": {
+    "description": "Same as native name",
+    "type": "string"
+  },
+  "b-switch/aria-labelledby": {
+    "description": "Accessibility label to establish relationship between the switch and control label",
+    "type": "string"
+  },
+  "b-tabs/value": {
+    "description": "Binding value, tab index. Passing undefined will show the first tab, null will show no tab",
+    "type": "string|number, null"
+  },
+  "b-tabs/destroy-on-hide": {
+    "description": "Destroy tabitem on hide",
+    "type": "boolean"
+  },
+  "b-tabs-item/label": {
+    "description": "Tab label",
+    "type": "string"
+  },
+  "b-tabs-item/value": {
+    "description": "Tab identifier",
+    "type": "string"
+  },
+  "b-tabs-item/disabled": {
+    "description": "Item is disabled",
+    "type": "boolean"
+  },
+  "b-tabs-item/visible": {
+    "description": "Item is visible",
+    "type": "boolean"
+  }
+}

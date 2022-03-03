@@ -1,24 +1,23 @@
 <template>
-    <main>
+    <div>
         <TheNavbar/>
-
-        <section class="documentation">
-            <div v-if="!meta.hideSidebar" class="sidebar-bg"/>
-
-            <div class="container is-fullhd docs-template-horizontal">
-                <TheSidebar v-if="!meta.hideSidebar" :data="menu"/>
-                <div class="docs-main">
-                    <div class="docs-main-container">
+        <div class="gov-container">
+            <div class="gov-container__content">
+                <div class="gov-layout">
+                    <div class="gov-layout__col gov-layout__col--pos-left">
+                        <TheSidebar :data="menu"/>
+                    </div>
+                    <div
+                        class="gov-layout__col gov-layout__col--pos-right
+                        gov-layout__col--spread-3">
                         <TheHeader v-bind="meta"/>
-
                         <router-view/>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
         <TheFooter/>
-    </main>
+    </div>
 </template>
 
 <script>
